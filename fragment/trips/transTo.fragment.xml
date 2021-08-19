@@ -1,0 +1,135 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified"
+	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Panel expandable="true" expanded="true" width="100%" class="no-padding">
+		<headerToolbar>
+			<Toolbar class="title">
+				<Input value="{CityFrom}" class="customCityInput" suggest="onSuggest" placeholder="{i18n>enterCityFrom}" data:filterName="Name"
+					showSuggestion="true" startSuggestion="2" suggestionItems="{ path: '/CitySet', templateShareable: false }"
+					enabled="{appView>/isTripsEnabled}" width="100%" name="CityFrom" fieldGroupIds="form3">
+					<suggestionItems>
+						<core:ListItem text="{Name} {Type}" additionalText="{Area}{= ${Area} &amp;&amp; ${Region} ? ' / ' : ''}{Region}" key="{Code}"/>
+					</suggestionItems>
+				</Input>
+				<Title text="→"/>
+				<Input value="{CityTo}" class="customCityInput" suggest="onSuggest" placeholder="{i18n>enterCityTo}" data:filterName="Name"
+					showSuggestion="true" startSuggestion="2" suggestionItems="{ path: '/CitySet', templateShareable: false }"
+					enabled="{appView>/isTripsEnabled}" width="100%" name="CityTo" fieldGroupIds="form3">
+					<suggestionItems>
+						<core:ListItem text="{Name} {Type}" additionalText="{Area}{= ${Area} &amp;&amp; ${Region} ? ' / ' : ''}{Region}" key="{Code}"/>
+					</suggestionItems>
+				</Input>
+			</Toolbar>
+		</headerToolbar>
+		<HBox class="padding" justifyContent="SpaceBetween" wrap="Wrap">
+			<HBox width="100%">
+				<VBox width="calc(50% - .5rem)">
+					<Label text="{i18n>dateTo}"/>
+					<DatePicker placeholder="{i18n>datePickerPlaceholder}" fieldGroupIds="form3" dateValue="{DateBegin}" name="DateBegin"
+						enabled="{appView>/isTripsEnabled}" width="100%"/>
+				</VBox>
+				<Input value="{mock>/transToBoolean}" name="Direction" data:type="boolean" visible="false"/>
+			</HBox>
+			<VBox width="calc(50% - .5rem)" class="margin-top">
+				<Label text="{i18n>payTrans}"/>
+				<ComboBox items="{path: 'mock>/PaymentSet', templateShareable: false }" enabled="{appView>/isTripsEnabled}" width="100%"
+					filterSecondaryValues="false" showSecondaryValues="false" fieldGroupIds="form3" selectedKey="{Payment}" name="Payment">
+					<items>
+						<core:ListItem text="{mock>Name}" key="{mock>Code}" additionalText="{mock>Code}"/>
+					</items>
+				</ComboBox>
+			</VBox>
+			<VBox width="calc(50% - .5rem)" class="margin-top">
+				<Label text="{i18n>transportType}"/>
+				<ComboBox items="{path: 'mock>/TransportToSet', templateShareable: false }" enabled="{appView>/isTripsEnabled}" width="100%"
+					filterSecondaryValues="false" showSecondaryValues="false" fieldGroupIds="form3" name="RequestType" selectedKey="{RequestType}"
+					selectionChange="onRequestTypeChange">
+					<items>
+						<core:ListItem text="{mock>Name}" key="{mock>Code}" additionalText="{mock>Code}"/>
+					</items>
+				</ComboBox>
+			</VBox>
+			<VBox class="margin-top" width="100%" visible="{= ${RequestType} === 'OF' ? true : false }">
+				<Label text="{i18n>avia}"/>
+				<ComboBox items="{path: 'mock>/AviaSet', templateShareable: false }" enabled="{appView>/isTripsEnabled}" width="100%"
+					filterSecondaryValues="true" showSecondaryValues="false" selectedKey="{Airline}" name="Airline">
+					<items>
+						<core:ListItem text="{mock>Name}" key="{mock>Code}" additionalText="{mock>Code}"/>
+					</items>
+				</ComboBox>
+			</VBox>
+			<VBox class="margin-top" width="calc(50% - .5rem)" visible="{= ${RequestType} === 'OF' ? true : false }">
+				<Label text="{i18n>class}"/>
+				<ComboBox items="{path: '/AviaClassSet', templateShareable: false }" enabled="{appView>/isTripsEnabled}" width="100%"
+					filterSecondaryValues="true" showSecondaryValues="false" selectedKey="{TypeClass}" name="TypeClass">
+					<items>
+						<core:ListItem text="{Name}" key="{Code}" additionalText="{Code}"/>
+					</items>
+				</ComboBox>
+			</VBox>
+			<VBox class="margin-top" width="calc(50% - .5rem)" visible="{= ${RequestType} === 'OF' ? true : false }">
+				<Label text="{i18n>flightNo}"/>
+				<Input value="{FlightNumber}" name="FlightNumber" enabled="{appView>/isTripsEnabled}" width="100%"/>
+			</VBox>
+			<VBox class="margin-top" width="100%" visible="{= ${RequestType} === 'OТ' ? true : false }">
+				<Label text="{i18n>class}"/>
+				<ComboBox items="{path: 'mock>/TrainTypeSet', templateShareable: false }" enabled="{appView>/isTripsEnabled}" width="100%"
+					filterSecondaryValues="true" showSecondaryValues="false" selectedKey="{ClassRail}" name="ClassRail">
+					<items>
+						<core:ListItem text="{mock>Name}" key="{mock>Code}" additionalText="{mock>Code}"/>
+					</items>
+				</ComboBox>
+			</VBox>
+			<VBox class="margin-top" width="calc(50% - .5rem)">
+				<Label text="{i18n>transPrice}"/>
+				<Input value="{Price}" name="Price" fieldGroupIds="form3" enabled="{appView>/isTripsEnabled}" width="100%"/>
+			</VBox>
+			<VBox class="margin-top" width="calc(50% - .5rem)">
+				<Label text="{i18n>baggage}"/>
+				<ComboBox items="{path: 'mock>/BaggageSet', templateShareable: false }" enabled="{appView>/isTripsEnabled}" width="100%"
+					filterSecondaryValues="true" showSecondaryValues="false" selectedKey="{Baggage}" name="Baggage">
+					<items>
+						<core:ListItem text="{mock>Name}" key="{mock>Code}" additionalText="{mock>Code}"/>
+					</items>
+				</ComboBox>
+			</VBox>
+			<VBox class="margin-top" width="calc(50% - .5rem)">
+				<Label text="{i18n>transferType}"/>
+				<ComboBox items="{path: 'mock>/TransferSet', templateShareable: false }" enabled="{appView>/isTripsEnabled}" width="100%"
+					filterSecondaryValues="true" showSecondaryValues="false" selectedKey="{Transfer}" fieldGroupIds="form3" name="Transfer">
+					<items>
+						<core:ListItem text="{mock>Name}" key="{mock>Code}" additionalText="{mock>Code}"/>
+					</items>
+				</ComboBox>
+			</VBox>
+			<VBox class="margin-top" width="calc(50% - .5rem)">
+				<Label text="{i18n>transferPrice}"/>
+				<Input value="{TransferCost}" name="TransferCost" fieldGroupIds="form3" type="Number" enabled="{appView>/isTripsEnabled}" width="100%"/>
+			</VBox>
+			<VBox class="margin-top" width="100%">
+				<Label text="{i18n>uploadResFiles}"/>
+				<HBox width="100%" justifyContent="SpaceBetween">
+					<VBox width="calc(100% - 140px - .5rem)">
+						<u:FileUploader width="100%" style="Emphasized" change="onFileChange" uploadComplete="onUploadComplete" maximumFileSize="5"
+							fileSizeExceed="onFileSize" uploadStart="onUploadStart" sendXHR="true" multiple="true" useMultipart="false" sameFilenameAllowed="true"
+							maximumFilenameLength="255" filenameLengthExceed="onFileNameLength" icon="sap-icon://attachment" iconOnly="true" name="reasonFile"
+							fileType="doc,docx,xls,xlsx,jpg,png,bmp,jpeg,gif,tiff,tif,pdf,DOC,DOCX,XLS,XLSX,JPG,PNG,BMP,JPEG,GIF,TIFF,TIF,PDF"
+							typeMissmatch="onFileType" uploadUrl="/sap/opu/odata/sap/ZHR_FI_TV_REQ_SRV/FileSet" data:type="{ItineraryNumber}{Request}"
+							data:refreshTable="fileTable{ItineraryNumber}{Request}" enabled="{appView>/isTripsEnabled}"/>
+					</VBox>
+					<Button text="{i18n>upload}" press="uploadTransFile" width="140px" data:reinr="{Reinr}" enabled="false"/>
+				</HBox>
+				<Label text="{i18n>resFiles}" class="margin-top"/>
+				<List items="{ path: 'ToFile', templateShareable: true }" data:filter="{ItineraryNumber}{Request}" updateFinished="onTransFileLoaded"
+					modeAnimationOn="true" showSeparators="None" showNoData="false" noDataText="Файлов не найдено" class="customFilesList"
+					fieldGroupIds="fileTable{ItineraryNumber}{Request}">
+					<CustomListItem>
+						<HBox justifyContent="SpaceBetween" alignItems="Center" width="100%">
+							<Link text="{Filename}" wrapping="true" target="_blank" href="{Uri}"/>
+							<Button type="Reject" icon="sap-icon://delete" press="deleteFile" enabled="{appView>/isTripsEnabled}"/>
+						</HBox>
+					</CustomListItem>
+				</List>
+			</VBox>
+		</HBox>
+	</Panel>
+</core:FragmentDefinition>

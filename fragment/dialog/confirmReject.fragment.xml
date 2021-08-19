@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>confirmReject}" stretch="{device>/system/phone}" class="sapUiContentPadding" id="checkBDialog"
+		afterClose="afterCloseDialog">
+		<content>
+			<Label text="{i18n>rejectDialog}"/>
+			<TextArea id="msg" maxLength="500" width="100%" showExceededText="true" rows="4"></TextArea>
+		</content>
+		<buttons>
+			<Button text="{i18n>Send}" data:id="confirmReject" data:status="7" data:msg="true" type="Accept" press="okDialog"/>
+			<Button type="Reject" text="{i18n>Cancel}" press="cancelDialog" id="cancelButton" data:id="checkBDialog"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

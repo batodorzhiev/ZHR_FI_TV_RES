@@ -1,0 +1,89 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified"
+	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Panel expandable="true" expanded="true" width="100%" class="no-padding">
+		<headerToolbar>
+			<Toolbar class="title">
+				<Input value="{CityTo}" class="customCityInput" suggest="onSuggest" placeholder="{i18n>enterCity}" data:filterName="Name"
+					showSuggestion="true" startSuggestion="2" suggestionItems="{ path: '/CitySet', templateShareable: false }"
+					enabled="{appView>/isTripsEnabled}" width="100%" name="CityTo" fieldGroupIds="form3">
+					<suggestionItems>
+						<core:ListItem text="{Name} {Type}" additionalText="{Area}{= ${Area} &amp;&amp; ${Region} ? ' / ' : ''}{Region}" key="{Code}"/>
+					</suggestionItems>
+				</Input>
+			</Toolbar>
+		</headerToolbar>
+		<HBox class="padding" justifyContent="SpaceBetween" wrap="Wrap">
+			<HBox width="100%" justifyContent="SpaceBetween">
+				<VBox width="calc(50% - .5rem)">
+					<Label text="{i18n>dateTimeBeg}" required="true"/>
+					<DateTimePicker displayFormat="short" dateValue="{ path: 'DateTimeBeg', formatOptions: { strictParsing: true, UTC: true}}"
+						name="DateTimeBeg" placeholder="{i18n>dateTimePlaceholder}" fieldGroupIds="form3" enabled="{appView>/isTripsEnabled}"
+						change="onCheckTransDate"/>
+					<Input value="{= ${RequestType} ? ${RequestType} : 'H' }" name="RequestType" visible="false"/>
+				</VBox>
+				<VBox width="calc(50% - .5rem)">
+					<Label text="{i18n>dateTimeEnd}" required="true"/>
+					<DateTimePicker displayFormat="short" dateValue="{ path: 'DateTimeEnd', formatOptions: { strictParsing: true, UTC: true}}"
+						name="DateTimeEnd" placeholder="{i18n>dateTimePlaceholder}" fieldGroupIds="form3" enabled="{appView>/isTripsEnabled}"
+						change="onCheckTransDate"/>
+				</VBox>
+			</HBox>
+			<VBox width="calc(50% - .5rem)" class="margin-top">
+				<Label text="{i18n>hotel}"/>
+				<Input value="{Hotel}" maxLength="200" name="Hotel" enabled="{appView>/isTripsEnabled}" width="100%"/>
+			</VBox>
+			<VBox width="calc(50% - .5rem)" class="margin-top">
+				<Label text="{i18n>payLiving}"/>
+				<ComboBox items="{path: 'mock>/PaymentSet', templateShareable: false }" enabled="{appView>/isTripsEnabled}" width="100%"
+					filterSecondaryValues="true" showSecondaryValues="false" fieldGroupIds="form3" selectedKey="{Payment}" name="Payment">
+					<items>
+						<core:ListItem text="{mock>Name}" key="{mock>Code}" additionalText="{mock>Code}"/>
+					</items>
+				</ComboBox>
+			</VBox>
+			<VBox width="calc(50% - .5rem)" class="margin-top">
+				<Label text="{i18n>transHotelPrice}"/>
+				<Input value="{Price}" name="Price" enabled="{appView>/isTripsEnabled}" fieldGroupIds="form3" width="100%"/>
+			</VBox>
+			<VBox class="margin-top" width="calc(50% - .5rem)">
+				<Label text="{i18n>hotelClass}"/>
+				<ComboBox items="{path: '/HotelClassSet', templateShareable: false }" enabled="{appView>/isTripsEnabled}" width="100%"
+					filterSecondaryValues="true" showSecondaryValues="false" fieldGroupIds="form3" selectedKey="{ClassRoom}" name="ClassRoom">
+					<items>
+						<core:ListItem text="{Name}" key="{Code}" additionalText="{Code}"/>
+					</items>
+				</ComboBox>
+			</VBox>
+			<VBox width="100%" class="margin-top">
+				<Label text="{i18n>hotelComment}"/>
+				<TextArea value="{HotelOption}" maxLength="150" enabled="{appView>/isTripsEnabled}" width="100%" growing="true" rows="2"
+					showExceededText="true"/>
+			</VBox>
+			<VBox width="100%">
+				<Label text="{i18n>uploadResFiles}"/>
+				<HBox width="100%" justifyContent="SpaceBetween">
+					<VBox width="calc(100% - 140px - .5rem)">
+						<u:FileUploader width="100%" style="Emphasized" change="onFileChange" uploadComplete="onUploadComplete" maximumFileSize="5"
+							fileSizeExceed="onFileSize" uploadStart="onUploadStart" sendXHR="true" multiple="true" useMultipart="false" sameFilenameAllowed="true"
+							maximumFilenameLength="255" filenameLengthExceed="onFileNameLength" icon="sap-icon://attachment" iconOnly="true" name="reasonFile"
+							fileType="doc,docx,xls,xlsx,jpg,png,bmp,jpeg,gif,tiff,tif,pdf,DOC,DOCX,XLS,XLSX,JPG,PNG,BMP,JPEG,GIF,TIFF,TIF,PDF"
+							typeMissmatch="onFileType" uploadUrl="/sap/opu/odata/sap/ZHR_FI_TV_REQ_SRV/FileSet" data:type="{ItineraryNumber}{Request}"
+							data:refreshTable="fileTable{ItineraryNumber}{Request}" enabled="{appView>/isTripsEnabled}"/>
+					</VBox>
+					<Button text="{i18n>upload}" press="uploadTransFile" width="140px" data:reinr="{Reinr}" enabled="false"/>
+				</HBox>
+				<Label text="{i18n>resFiles}" class="margin-top"/>
+				<List items="{ path: 'ToFile', templateShareable: true }" width="100%" data:filter="{ItineraryNumber}{Request}"
+					fieldGroupIds="fileTable{ItineraryNumber}{Request}" updateFinished="onTransFileLoaded" modeAnimationOn="true" showSeparators="None"
+					showNoData="false" noDataText="Файлов не найдено" class="customFilesList">
+					<CustomListItem>
+						<HBox justifyContent="SpaceBetween" alignItems="Center" width="100%">
+							<Link text="{Filename}" wrapping="true" target="_blank" href="{Uri}"/>
+							<Button type="Reject" icon="sap-icon://delete" press="deleteFile" enabled="{appView>/isTripsEnabled}"/>
+						</HBox>
+					</CustomListItem>
+				</List>
+			</VBox>
+		</HBox>
+	</Panel>
+</core:FragmentDefinition>

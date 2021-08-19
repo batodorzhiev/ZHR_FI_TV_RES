@@ -1,0 +1,38 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified"
+	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog contentWidth="500px" title="Под личную ответственность" stretch="{device>/system/phone}" class="sapUiContentPadding" id="persRespDialog">
+		<content>
+			<VBox validateFieldGroup="onFormValidate" id="form4" data:id="form4">
+				<!--<Text text="{i18n>selfRespText}"/>-->
+				<Label text="Комментарий" class="margin-top" required="true"/>
+				<TextArea id="persRespCommentary" data:checkButton="persRespDialogButton" rows="2" growing="true" showExceededText="true"
+					value="{PersRespText}" maxLength="500" fieldGroupIds="form4" width="100%" enabled="false"/>
+				<!--<Button press="onDownload" class="margin-top"-->
+				<!--	data:url="/sap/opu/odata/sap/ZHR_FI_TV_REQ_SRV/LoadBookingSet(Pernr='{Pernr}',Reinr='{Reinr}',Type='GUARANTY')/$value"-->
+				<!--	icon="sap-icon://download" text="{i18n>downloadSelfRespForm}"/>-->
+				<!--<Label text="{i18n>scanCopyResp}" class="margin-top" required="true"/>-->
+				<!--<u:FileUploader visible="{appView>/isCreate}" fieldGroupIds="form4" width="100%" style="Emphasized" id="responsibilityUploader"-->
+				<!--	value="{mock>/responsibilityFile}" change="onCheckForm" uploadComplete="onUploadComplete" maximumFileSize="2" fileSizeExceed="onFileSize"-->
+				<!--	uploadStart="onUploadStart" sendXHR="true" multiple="true" useMultipart="false" sameFilenameAllowed="true" maximumFilenameLength="32"-->
+				<!--	filenameLengthExceed="onFileNameLength" icon="sap-icon://attachment" iconOnly="true" name="responsibilityFile"-->
+				<!--	fileType="doc,docx,xls,xlsx,jpg,png,bmp,jpeg,gif,tiff,tif,pdf,DOC,DOCX,XLS,XLSX,JPG,PNG,BMP,JPEG,GIF,TIFF,TIF,PDF"-->
+				<!--	typeMissmatch="onFileType" uploadUrl="/sap/opu/odata/sap/ZHR_FI_TV_REQ_SRV/FileSet" data:type="responsibility"/>-->
+				<List items="{ path: 'ToFile', filters: [{ path: 'Type', operator: 'EQ', value1: 'responsibility' }], templateShareable: true }"
+					data:id="responsibilityUploader" modeAnimationOn="true" showSeparators="None" showNoData="true" noDataText="Файлов не найдено"
+					class="customFilesList" updateFinished="onFileListLoaded">
+					<CustomListItem>
+						<HBox width="100%">
+							<Link text="{Filename}" class="margin-right" target="_blank" href="{Uri}"/>
+							<!--<core:Icon alt="{i18n>delete}" src="sap-icon://delete" data:reinr="{Reinr}" data:filename="{Filename}" press="onFileDelete" color="red"-->
+							<!--	class="pointer" visible="{EditFlag}"/>-->
+						</HBox>
+					</CustomListItem>
+				</List>
+			</VBox>
+		</content>
+		<buttons>
+			<!--<Button text="{i18n>cancel}" data:id="persRespDialog" type="Back" press="onPersCancel"/>-->
+			<Button type="Accept" text="{i18n>close}" data:id="persRespDialog" press="cancelDialog" enabled="true" id="persRespDialogButton"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

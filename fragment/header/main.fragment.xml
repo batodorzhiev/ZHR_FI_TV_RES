@@ -1,0 +1,142 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified"
+	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<core:Fragment fragmentName="fragment.header.timeline" type="XML"/>
+	<HBox width="100%" justifyContent="SpaceBetween" wrap="Wrap" id="form1">
+		<HBox width="100%" justifyContent="Start" alignItems="End" wrap="Wrap">
+			<VBox class="margin-right margin-bottom">
+				<Image id="profileImage" width="50px"/>
+				<Input value="{Reinr}" name="Reinr" visible="false"/>
+				<Input value="{Status1}" name="Status1" visible="false"/>
+				<Input value="{TripGoal}" name="TripGoal" visible="false"/>
+				<Input value="{TripType}" name="TripType" visible="false"/>
+				<Input value="{ReservSt}" name="ReservSt" visible="false"/>
+				<Input value="{ReasonText}" name="ReasonText" visible="false"/>
+				<Input value="{BasicTrip}" name="BasicTrip" visible="false"/>
+				<Input value="{ReservNot}" name="ReservNot" visible="false"/>
+			</VBox>
+			<VBox class="margin-right margin-bottom" width="250px">
+				<Label text="{i18n>dateBeginEnd}"/>
+				<DateRangeSelection name="DateBegin~DateEnd" placeholder="{i18n>dateRangePlaceholder}" fieldGroupIds="form1" enabled="false"
+					dateValue="{DateBegin}" change="onMainDatesChange" secondDateValue="{DateEnd}" width="15rem"/>
+			</VBox>
+			<VBox class="margin-right margin-bottom" width="150px">
+				<Label text="{i18n>pernr}"/>
+				<Input value="{Pernr}" name="Pernr" enabled="false" width="100%"/>
+			</VBox>
+			<VBox class="margin-right margin-bottom">
+				<Label text="{i18n>fio}"/>
+				<Input value="{Fio}" width="20rem" suggest="onSuggest" placeholder="{i18n>enterFio}" fieldGroupIds="form1"
+					suggestionItemSelected="onFioSelected" data:filterName="Fio" data:filterKey="Pernr" showSuggestion="true" startSuggestion="2"
+					id="EmployeesSet" selectedKey="{Pernr}"
+					suggestionItems="{ path: '/EmployeesSet', templateShareable: false, events: { dataReceived: '.onInputDataRecieved' } }" enabled="false">
+					<suggestionItems>
+						<core:ListItem text="{Fio}" additionalText="{Pernr}" key="{Pernr}"/>
+					</suggestionItems>
+				</Input>
+			</VBox>
+			<VBox class="margin-right margin-bottom" width="350px">
+				<Label text="{i18n>department}"/>
+				<Input value="{Department}" enabled="false" width="100%"/>
+			</VBox>
+			<VBox class="margin-right margin-bottom" width="250px">
+				<Label text="{i18n>position}"/>
+				<Input value="{Position}" enabled="false" width="100%"/>
+			</VBox>
+			<VBox class="margin-right margin-bottom" width="100px">
+				<Label text="{i18n>zzfistl}"/>
+				<Input value="{Zzfistl}" enabled="false" width="100%"/>
+			</VBox>
+			<VBox class="margin-right margin-bottom" width="150px">
+				<Label text="{i18n>phone}"/>
+				<MaskInput mask="+7 (CCC) CCC CC CC" placeholderSymbol="_" data:numbers="true" data:checkLength="11" fieldGroupIds="form2" enabled="false"
+					value="{MobilePhone}" width="100%" id="phone" name="MobilePhone">
+					<rules>
+						<MaskInputRule maskFormatSymbol="C" regex="[0-9]"/>
+					</rules>
+				</MaskInput>
+			</VBox>
+		</HBox>
+		<HBox justifyContent="Start" width="100%" wrap="Wrap" alignItems="End">
+			<VBox class="margin-right margin-bottom">
+				<Label text="{i18n>passport}"/>
+				<ComboBox items="{path: 'ToPass', templateShareable: false }" enabled="false" width="22rem" filterSecondaryValues="true"
+					showSecondaryValues="true" selectedKey="{Nomer}" selectionChange="onPassportChange" id="passport" tooltip="{Name}">
+					<items>
+						<core:ListItem text="{Name}" key="{Nomer}" additionalText="{Seria}{Seri0}{= ${Seria} &amp;&amp; ${Seri0} ? ' - ' : ''}{Nomer}"/>
+					</items>
+				</ComboBox>
+			</VBox>
+			<VBox class="margin-right margin-bottom" visible="{= ${NamePass} !== '' ? true : false }">
+				<Label text="Имя"/>
+				<Input enabled="false" value="{NamePass}" name="NamePass"/>
+			</VBox>
+			<VBox class="margin-right margin-bottom" visible="{= ${LastNamePass} !== '' ? true : false }">
+				<Label text="Фамилия"/>
+				<Input enabled="false" value="{LastNamePass}" name="LastNamePass"/>
+			</VBox>
+			<HBox alignItems="End">
+				<VBox class="margin-right margin-bottom">
+					<Label text="Серия"/>
+					<Input enabled="false" maxLength="2" width="3rem" value="{Seria}" name="Seria" id="seria" type="Tel"/>
+				</VBox>
+				<VBox class="margin-right margin-bottom">
+					<Input enabled="false" data:checkLength="2" width="3rem" name="Seri0" value="{Seri0}" id="seri0" type="Tel" maxLength="2"
+						visible="{= ${Seri0} !== '' ? true : false }"/>
+				</VBox>
+			</HBox>
+			<VBox class="margin-right margin-bottom">
+				<Label text="Номер"/>
+				<Input enabled="false" width="6rem" type="Tel" value="{Nomer}" name="Nomer"/>
+			</VBox>
+			<VBox class="margin-right margin-bottom">
+				<Label text="{i18n>issueDate}"/>
+				<DatePicker enabled="false" placeholder="{i18n>datePickerPlaceholder}" name="Datbg" width="10rem" dateValue="{Datbg}"
+					fieldGroupIds="{= ${Nomer} === 'new22' ? 'form2' : 'null' }"/>
+			</VBox>
+			<VBox class="margin-right margin-bottom">
+				<Label class="padding-top-half" text="Кем выдан"/>
+				<Input enabled="false" fieldGroupIds="{= ${Nomer} === 'new22' ? 'form2' : 'null' }" name="Passl~Passl2" width="30rem" value="{Passl}{Passl2}" maxLength="150"
+					tooltip="{Passl}{Passl2}"/>
+			</VBox>
+			<VBox class="margin-right margin-bottom" width="150px" visible="{= ${Pcode} !== '' ? true : false }">
+				<Label class="padding-top-half" text="Код подразделения"/>
+				<MaskInput enabled="false" width="100%" data:checkLength="6" id="pcode" name="Pcode" placeholderSymbol="_" mask="999-999" value="{Pcode}">
+					<rules>
+						<MaskInputRule maskFormatSymbol="C" regex="[0-9]"/>
+					</rules>
+				</MaskInput>
+			</VBox>
+			<VBox class="margin-right margin-bottom" visible="{= ${Citizenship} !== '' ? true : false }">
+				<Label class="padding-top-half" text="Гражданство"/>
+				<Input enabled="false" width="12rem" value="{Citizenship}" maxLength="150" tooltip="{Citizenship}" name="Citizenship"/>
+			</VBox>
+			<VBox class="margin-right margin-bottom" visible="{= ${Citizenship2} !== '' ? true : false }">
+				<Label class="padding-top-half" text="2-я госпринадлежность"/>
+				<Input enabled="false" width="12rem" value="{Citizenship2}" maxLength="150" tooltip="{Citizenship2}"/>
+			</VBox>
+			<VBox class="margin-right margin-bottom" visible="{= ${Citizenship3} !== '' ? true : false }">
+				<Label class="padding-top-half" text="3-я госпринадлежность" tooltip="{Citizenship3}"/>
+				<Input enabled="false" width="12rem" value="{Citizenship3}" maxLength="150"/>
+			</VBox>
+		</HBox>
+		<HBox width="100%" justifyContent="Start" alignItems="Start" wrap="Wrap">
+			<CheckBox text="{i18n>REQ_CHANGE_RS}" selected="{ReqChangeRs}" enabled="false" class="margin-right"/>
+			<CheckBox text="{i18n>REMIND_RESERV}" selected="{RemindReserv}" name="RemindReserv" class="margin-right" enabled="{= ${ReservSt} === '6' ? false : true}"/>
+			<Button text="Скачать обязательство под личную ответственность" visible="{PersResp}" press="showConfirmDialog" data:dialog="persRespDialog"/>
+		</HBox>
+		<Hbox alignItems="End" justifyContent="End" width="100%" wrap="Wrap">
+			<Button text="{appView>/changeExecutor}" enabled="{appView>/isTakeButtonEnabled}" data:id="resetExecutor" data:status="2" width="15rem"
+				type="Emphasized" press="changeBookingStatus" class="margin-right margin-top"/>
+			<Button text="{i18n>return}" enabled="{appView>/isButtonsEnabled}" data:id="return" data:status="3" width="15rem" type="Emphasized"
+				press="showConfirmDialog" data:dialog="confirmReturn" class="margin-right margin-top"/>
+			<Button text="{i18n>finish}" enabled="{appView>/isButtonsEnabled}" data:id="finish" data:status="6" width="15rem" type="Emphasized"
+				press="changeBookingStatus" class="margin-right margin-top"/>
+			<Button text="{i18n>reject}" enabled="{appView>/isCancelButtonEnabled}" data:id="reject" data:status="7" width="15rem" type="Emphasized"
+				press="showConfirmDialog" data:dialog="confirmReject" class="margin-right margin-top"/>
+			<Button text="{i18n>checkReserve}" enabled="{appView>/isButtonsEnabled}" data:id="checkReserve" data:status="4" width="15rem"
+				type="Emphasized" press="showConfirmDialog" data:dialog="confirmCheck" class="margin-right margin-top"/>
+			<Button text="{i18n>save}" enabled="{appView>/isTripsEnabled}" data:id="save" class="margin-top" data:staus="" width="15rem" type="Accept"
+				press="onSave"/>
+		</Hbox>
+	</HBox>
+</core:FragmentDefinition>

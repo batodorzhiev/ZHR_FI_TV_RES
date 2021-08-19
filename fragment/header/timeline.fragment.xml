@@ -1,0 +1,28 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:ui="sap.suite.ui.commons">
+	<Panel visible="{= ${Reinr} === '0000000000' ? false : true }" expandable="true" expanded="false" width="100%"
+		class="margin-bottom ver-padding">
+		<headerToolbar>
+			<Toolbar id="tb" class="title">
+				<Title text="История изменений"/>
+				<!--<ComboBox items="{ path: '/TimelineTypeSet'  }" selectedKey="Code">-->
+				<!--	<items>-->
+				<!--		<core:ListItem key="{Code}" text="{Name}"></core:ListItem>-->
+				<!--	</items>-->
+				<!--</ComboBox>-->
+			</Toolbar>
+		</headerToolbar>
+		<ui:Timeline width="100%" textHeight="3" showHeaderBar="false" axisOrientation="Horizontal" enableDoubleSided="false" alignment="Right"
+			lazyLoading="false" growingThreshold="0" growing="false" class="customTimeline" id="timeline" sort="false"
+			content="{ path: 'ToTimeLine', filters: [{ path: 'Id', operator: 'EQ', value1: 'RES' }] }">
+			<!--content="{ToTimeLine}"-->
+			<!--items="{ path: '/RequestListSet', filters: [{ path: 'AppID', operator: 'EQ', value1: 'ZHR_FI_TV_RES' }] }"-->
+			<ui:content>
+				<ui:TimelineItem dateTime="{Date} - {Time}"
+					title="{StatusText}{= ${Role} &amp;&amp; ${StatusText} ? ' - ' : '' }{Role}{= ${FioD} ? ${i18n>lineFeed} : '' }{= ${FioD} ? '(' : '' }{= ${FioD} ? ${i18n>deleg} : '' } {FioD}{= ${FioD} ? ')' : '' }"
+					maxCharacters="5000" status="{ parts: [ {path: 'Status'} ], formatter: '.formatter.color'}" userNameClickable="false" text="{Commentary}{PrevAprov} &#xA;&#xA; {NewAprov}"
+					userName="{Fio}" icon="{ parts: [ {path: 'Status'} ], formatter: '.formatter.icon'}"/>
+			</ui:content>
+		</ui:Timeline>
+	</Panel>
+</core:FragmentDefinition>

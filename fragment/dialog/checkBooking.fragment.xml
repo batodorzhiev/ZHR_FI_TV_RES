@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>checkDialog}" stretch="{device>/system/phone}" class="sapUiContentPadding" id="checkBDialog" afterClose="afterCloseDialog">
+		<content>
+			<RadioButtonGroup>
+				<RadioButton id="Aeroflot" text="{i18n>Aeroflot}"/>
+				<RadioButton id="Siberia" text="{i18n>Sibir}"/>
+				<RadioButton id="Hotel" text="{i18n>Hotel}"/>
+			</RadioButtonGroup>
+		</content>
+		<buttons>
+			<Button text="{i18n>download}" data:id="checkBDialog" type="Accept" press="sendDialog"/>
+			<Button type="Reject" text="{i18n>Cancel}" press="cancelDialog" id="cancelButton" data:id="checkBDialog"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

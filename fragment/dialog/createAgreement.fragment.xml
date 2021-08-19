@@ -1,0 +1,62 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>dismissInf}" stretch="{device>/system/phone}" class="sapUiContentPadding" id="createAgreement">
+		<content>
+			<VBox>
+				<HBox justifyContent="SpaceBetween">
+					<VBox class="padding-right">
+						<Title class="padding-bottom-half" titleStyle="H4" text="1. У сотрудника есть ребенок возраста менее 3-х лет."/>
+						<Label text="Проведение данного мероприятия для женщин, имеющих детей в возрасте до трех лет требует"/>
+						<Label text="их письменное согласие с указанием факта ознакомления со своим правом отказа (ст. 259 ТК РФ)"/>
+					</VBox>
+					<Button type="Default" press="downloadFile" data:id="filename.png" text="{i18n>downloadForm}"/>
+				</HBox>
+				<HBox justifyContent="SpaceBetween" class="padding-top">
+					<VBox class="padding-right">
+						<Title class="padding-bottom-half" titleStyle="H4" text="2. У сотрудника есть ребенок возраста менее 5-ти лет."/>
+						<Label text="Проведение данного мероприятия для матерей и отцов, опекунов, воспитывающих без супруга (супруги) детей в возрасте"/>
+						<Label text="до пяти лет требует их письменное согласие с указанием факта ознакомления со своим правом отказа (ст. 259 ТК РФ)"/>
+					</VBox>
+					<Button type="Default" press="downloadFile" data:id="filename.png" text="{i18n>downloadForm}"/>
+				</HBox>
+				<HBox justifyContent="SpaceBetween" class="padding-top">
+					<VBox class="padding-right">
+						<Title class="padding-bottom-half" titleStyle="H4" text="3. Сотрудник является опекуном ребенка возраста менее 5-ти лет."/>
+						<Label text="Проведение данного мероприятия для матерей и отцов, опекунов, воспитывающих без супруга (супруги) детей в возрасте"/>
+						<Label text="до пяти лет требует их письменное согласие с указанием факта ознакомления со своим правом отказа (ст. 259 ТК РФ)"/>
+					</VBox>
+					<Button type="Default" press="downloadFile" data:id="filename.png" text="{i18n>downloadForm}"/>
+				</HBox>
+				<HBox justifyContent="SpaceBetween" class="padding-top">
+					<VBox class="padding-right">
+						<Title class="padding-bottom-half" titleStyle="H4" text="4. У сотрудника есть ребенок с инвалидностью."/>
+						<Label text="Проведение данного мероприятия для работников, имеющих детей-инвалидов требует их письменное согласие"/>
+						<Label text="с указанием факта ознакомления со своим правом отказа (ст. 259 ТК РФ)"/>
+					</VBox>
+					<Button type="Default" press="downloadFile" data:id="filename.png" text="{i18n>downloadForm}"/>
+				</HBox>
+				<HBox justifyContent="SpaceBetween" class="padding-top">
+					<VBox class="padding-right">
+						<Title class="padding-bottom-half" titleStyle="H4" text="5. Сотрудник осуществляет уход за больным членом семьи."/>
+						<Label text="Проведение данного мероприятия для работников, осуществляющих уход за больными членами их семей в соответствии"/>
+						<Label text="с медицинским заключением  требует их письменное согласие с указанием факта ознакомления со своим правом отказа (ст. 259 ТК РФ)"/>
+					</VBox>
+					<Button type="Default" press="downloadFile" data:id="filename.png" text="{i18n>downloadForm}"/>
+				</HBox>
+				<HBox justifyContent="SpaceBetween" class="padding-top padding-bottom">
+					<VBox class="padding-right">
+						<Title class="padding-bottom-half" titleStyle="H4" text="6. Сотрудница предоставила справку о беременности."/>
+						<Label text="Запрещается направление в служебные командировки, привлечение к сверхурочной работе, работе в ночное время,"/>
+						<Label text="выходные и нерабочие праздничные дни беременных женщин. (ст. 259 ТК РФ)"/>
+					</VBox>
+					<Button type="Default" press="downloadFile" data:id="filename.png" text="{i18n>downloadForm}"/>
+				</HBox>
+				<CheckBox selected="true" text="{i18n>agreed259}"/>
+			</VBox>
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" data:id="createAgreement" type="Transparent" press="cancelDialog"/>
+			<Button type="Accept" text="{i18n>approveAndCreate}" data:id="createAgreement" data:nav="true" press="onCreateRequest"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

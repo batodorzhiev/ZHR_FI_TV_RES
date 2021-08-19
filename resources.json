@@ -1,0 +1,130 @@
+{
+    "resources": [
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": ".user.project.json"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "controller/BaseController.js"
+        },
+        {
+            "name": "controller/Worklist.controller.js"
+        },
+        {
+            "name": "controller/ErrorHandler.js"
+        },
+        {
+            "name": "controller/Object.controller.js"
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "controller/NotFound.controller.js"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": ".project.json"
+        },
+        {
+            "name": "fragment/dialog/cities.fragment.xml"
+        },
+        {
+            "name": "fragment/dialog/createAgreement.fragment.xml"
+        },
+        {
+            "name": "fragment/dialog/rejectDialog.fragment.xml"
+        },
+        {
+            "name": "fragment/dialog/checkBooking.fragment.xml"
+        },
+        {
+            "name": "fragment/dialog/persRespDialog.fragment.xml"
+        },
+        {
+            "name": "fragment/dialog/confirmReject.fragment.xml"
+        },
+        {
+            "name": "fragment/dialog/confirmReturn.fragment.xml"
+        },
+        {
+            "name": "fragment/dialog/confirmCheck.fragment.xml"
+        },
+        {
+            "name": "fragment/content/main.fragment.xml"
+        },
+        {
+            "name": "fragment/header/timeline.fragment.xml"
+        },
+        {
+            "name": "fragment/header/main.fragment.xml"
+        },
+        {
+            "name": "fragment/trips/transHotel.fragment.xml"
+        },
+        {
+            "name": "fragment/trips/transFrom.fragment.xml"
+        },
+        {
+            "name": "fragment/trips/trips.fragment.xml"
+        },
+        {
+            "name": "fragment/trips/transTo.fragment.xml"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "localService/object.json"
+        },
+        {
+            "name": "localService/mockserver.js"
+        },
+        {
+            "name": "localService/profile.png"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "view/Object.view.xml"
+        },
+        {
+            "name": "view/ObjectNotFound.view.xml"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "view/Worklist.view.xml"
+        },
+        {
+            "name": "view/NotFound.view.xml"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "model/formatter.js"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "resources.json",
+            "merged": true
+        }
+    ]
+}

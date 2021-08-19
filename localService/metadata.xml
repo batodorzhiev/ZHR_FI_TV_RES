@@ -1,0 +1,1430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edmx:Edmx xmlns:sap="http://www.sap.com/Protocols/SAPData" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+	xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xml:lang="ru" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" sap:schema-version="1" Namespace="ZHR_FI_TV_REQ_SRV">
+			<EntityType sap:content-version="1" Name="Trip">
+				<Key>
+					<PropertyRef Name="Reinr"/>
+					<PropertyRef Name="ItineraryNumber"/>
+					<PropertyRef Name="Request"/>
+				</Key>
+				<Property Name="Country" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Страна"
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="Direction" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Флаг"
+					sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="DateTimeBeg" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Метка времени" sap:unicode="false" Type="Edm.DateTime" Precision="0"/>
+				<Property Name="DateTimeEnd" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Метка времени" sap:unicode="false" Type="Edm.DateTime" Precision="0"/>
+				<Property Name="Reinr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="НомерКомндр"
+					sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="ItineraryNumber" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="№ этапа команд." sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Request" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Номер запроса"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Pernr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Табельный номер"
+					sap:unicode="false" MaxLength="8" Nullable="false" Type="Edm.String"/>
+				<Property Name="Region" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Регион"
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="Payment" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Тип оплаты"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="DateBegin" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Начальная дата" sap:unicode="false" Type="Edm.DateTime" Precision="7"/>
+				<Property Name="TimeBeg" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Начальное время"
+					sap:unicode="false" MaxLength="6" Type="Edm.String"/>
+				<Property Name="DateEnd" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Конечная дата"
+					sap:unicode="false" Type="Edm.DateTime" Precision="7"/>
+				<Property Name="TimeEnd" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Конечное время"
+					sap:unicode="false" MaxLength="6" Type="Edm.String"/>
+				<Property Name="CityFrom" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Начальный пункт" sap:unicode="false" MaxLength="59" Nullable="false" Type="Edm.String"/>
+				<Property Name="CountryBeg" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Страна"
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="CityTo" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Конечный пункт"
+					sap:unicode="false" MaxLength="59" Nullable="false" Type="Edm.String"/>
+				<Property Name="Price" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Цена"
+					sap:unicode="false" MaxLength="11" Nullable="false" Type="Edm.String"/>
+				<Property Name="RequestType" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Т/поз. команд." sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="TripType" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Ключ значения"
+					sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String"/>
+				<Property Name="TripGoal" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Краткая цель"
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="ClassAir" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Класс обслуживания" sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Airline" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Авиакомпания"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="FlightNumber" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Номер предпочтительного рейса" sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="Baggage" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Багаж"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Transfer" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Трансфер на месте" sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="TransferCost" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Стоимость трансфера" sap:unicode="false" MaxLength="20" Nullable="false" Type="Edm.String"/>
+				<Property Name="ClassRail" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Класс обслуживания ЖД" sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="ClassHotel" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Класс гостиницы" sap:unicode="false" Nullable="false" Type="Edm.Decimal" Precision="10" Scale="0"/>
+				<Property Name="ClassRoom" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Класс номера"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="HotelOption" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Предпочтительный вариант гостиницы" sap:unicode="false" MaxLength="255" Nullable="false" Type="Edm.String"/>
+				<Property Name="Betfa" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="СуммаВозмещения"
+					sap:unicode="false" Type="Edm.Decimal" Precision="11" Scale="2"/>
+				<Property Name="Waers" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Валюта"
+					sap:unicode="false" MaxLength="5" Nullable="false" Type="Edm.String" sap:semantics="currency-code"/>
+				<Property Name="Zzorg" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Текст длиной 120"
+					sap:unicode="false" MaxLength="120" Nullable="false" Type="Edm.String"/>
+				<Property Name="TypeClass" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Правило классов" sap:unicode="false" MaxLength="8" Nullable="false" Type="Edm.String"/>
+				<Property Name="Comment1" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Text 150"
+					sap:unicode="false" MaxLength="150" Nullable="false" Type="Edm.String"/>
+				<NavigationProperty Name="ToTransTo" ToRole="ToRole_TripToTransTo" FromRole="FromRole_TripToTransTo"
+					Relationship="ZHR_FI_TV_REQ_SRV.TripToTransTo"/>
+				<NavigationProperty Name="ToTransHotel" ToRole="ToRole_TripToTransHotel" FromRole="FromRole_TripToTransHotel"
+					Relationship="ZHR_FI_TV_REQ_SRV.TripToTransHotel"/>
+				<NavigationProperty Name="ToTransFrom" ToRole="ToRole_TripToTransFrom" FromRole="FromRole_TripToTransFrom"
+					Relationship="ZHR_FI_TV_REQ_SRV.TripToTransFrom"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Request">
+				<Key>
+					<PropertyRef Name="Pernr"/>
+					<PropertyRef Name="Reinr"/>
+					<PropertyRef Name="Subty"/>
+				</Key>
+				<Property Name="ButtonOrderForm" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Сфор.Приказ" sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="Zzfistl" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="ПФМ"
+					sap:unicode="false" MaxLength="16" Nullable="false" Type="Edm.String"/>
+				<Property Name="Citizenship" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Полное название" sap:unicode="false" MaxLength="50" Nullable="false" Type="Edm.String"/>
+				<Property Name="Kostl" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="МВЗ"
+					sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="Tzone" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Час. пояса: разница" sap:unicode="false" MaxLength="6" Nullable="false" Type="Edm.String"/>
+				<Property Name="Citizenship2" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Полное название" sap:unicode="false" MaxLength="50" Nullable="false" Type="Edm.String"/>
+				<Property Name="Role" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Роль"
+					sap:unicode="false" MaxLength="30" Nullable="false" Type="Edm.String"/>
+				<Property Name="Citizenship3" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Полное название" sap:unicode="false" MaxLength="50" Nullable="false" Type="Edm.String"/>
+				<Property Name="Pernr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Табельный номер"
+					sap:unicode="false" MaxLength="8" Nullable="false" Type="Edm.String"/>
+				<Property Name="Reinr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="НомерКомндр"
+					sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="Subty" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Тип паспорта"
+					sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String"/>
+				<Property Name="Approver" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Согласующий"
+					sap:unicode="false" MaxLength="12" Nullable="false" Type="Edm.String"/>
+				<Property Name="Department" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Текст"
+					sap:unicode="false" MaxLength="255" Nullable="false" Type="Edm.String"/>
+				<Property Name="ChangeFlag" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Показывать ли кнопки" sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="DateTimeBeg" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Метка времени" sap:unicode="false" Type="Edm.DateTime" Precision="0"/>
+				<Property Name="DateTimeEnd" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Метка времени" sap:unicode="false" Type="Edm.DateTime" Precision="0"/>
+				<Property Name="PersRespText" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Комментарий" sap:unicode="false" MaxLength="500" Nullable="false" Type="Edm.String"/>
+				<Property Name="Status1" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Статус 1"
+					sap:unicode="false" MaxLength="1" Nullable="false" Type="Edm.String"/>
+				<Property Name="Status2" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Статус 2"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="StatusText1" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Наименование статуса" sap:unicode="false" MaxLength="100" Nullable="false" Type="Edm.String"/>
+				<Property Name="StatusText2" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Наименование статуса" sap:unicode="false" MaxLength="100" Nullable="false" Type="Edm.String"/>
+				<Property Name="Country" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Страна"
+					sap:unicode="false" MaxLength="100" Nullable="false" Type="Edm.String"/>
+				<Property Name="DateBegin" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Действ. с"
+					sap:unicode="false" Type="Edm.DateTime" Precision="7"/>
+				<Property Name="DateEnd" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Действ. по"
+					sap:unicode="false" Type="Edm.DateTime" Precision="7"/>
+				<Property Name="Reason" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Код цели командировок" sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="Position" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Наименование Долж." sap:unicode="false" MaxLength="125" Nullable="false" Type="Edm.String"/>
+				<Property Name="Fio" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="ИмяСотр/Канд"
+					sap:unicode="false" MaxLength="40" Nullable="false" Type="Edm.String"/>
+				<Property Name="Seria" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Серия"
+					sap:unicode="false" MaxLength="8" Nullable="false" Type="Edm.String"/>
+				<Property Name="Seri0" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Сер. ч.2"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Nomer" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Ид. номер"
+					sap:unicode="false" MaxLength="15" Nullable="false" Type="Edm.String"/>
+				<Property Name="Passl" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Кем выдан"
+					sap:unicode="false" MaxLength="100" Nullable="false" Type="Edm.String"/>
+				<Property Name="Datbg" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Дата выдачи"
+					sap:unicode="false" Type="Edm.DateTime" Precision="7"/>
+				<Property Name="Pcode" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Текст"
+					sap:unicode="false" MaxLength="255" Nullable="false" Type="Edm.String"/>
+				<Property Name="TripGoal" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Краткая цель"
+					sap:unicode="false" MaxLength="3" Type="Edm.String"/>
+				<Property Name="TripType" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Ключ значения"
+					sap:unicode="false" MaxLength="4" Type="Edm.String"/>
+				<Property Name="ReasonText" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Цель командировки" sap:unicode="false" MaxLength="500" Nullable="false" Type="Edm.String"/>
+				<Property Name="PersResp" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Под личную ответств." sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="Commentary" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Комментарий"
+					sap:unicode="false" MaxLength="500" Nullable="false" Type="Edm.String"/>
+				<Property Name="AdvPayment" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Нужен аванс"
+					sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="StatusCost" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Статус сметы затрат" sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="MobilePhone" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Мобильный телефон" sap:unicode="false" MaxLength="20" Nullable="false" Type="Edm.String"/>
+				<Property Name="NightWork" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Планируется работа в" sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="OvertimeWork" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Планируется сверхуро" sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="Nachn" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Фамилия"
+					sap:unicode="false" MaxLength="40" Nullable="false" Type="Edm.String"/>
+				<Property Name="Vorna" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Имя"
+					sap:unicode="false" MaxLength="40" Nullable="false" Type="Edm.String"/>
+				<Property Name="Visa" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Виза"
+					sap:unicode="false" MaxLength="1" Nullable="false" Type="Edm.String"/>
+				<Property Name="EditFlag" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Флаг Редактирования" sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="ReasonTrip" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="char1500"
+					sap:unicode="false" MaxLength="1500" Nullable="false" Type="Edm.String"/>
+				<Property Name="IssueDate" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Дата"
+					sap:unicode="false" Type="Edm.DateTime" Precision="7"/>
+				<Property Name="ExpireDate" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Дата"
+					sap:unicode="false" Type="Edm.DateTime" Precision="7"/>
+				<Property Name="NamePass" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="ИмяСотр/Канд"
+					sap:unicode="false" MaxLength="40" Nullable="false" Type="Edm.String"/>
+				<Property Name="LastNamePass" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="ИмяСотр/Канд" sap:unicode="false" MaxLength="40" Nullable="false" Type="Edm.String"/>
+				<Property Name="DirectiveComment" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Длинный текст" sap:unicode="false" MaxLength="500" Nullable="false" Type="Edm.String"/>
+				<Property Name="ManualPass" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Флаг"
+					sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="ReservSt" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Статус 1"
+					sap:unicode="false" MaxLength="1" Nullable="false" Type="Edm.String"/>
+				<Property Name="ReservStText" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Наименование статуса" sap:unicode="false" MaxLength="100" Nullable="false" Type="Edm.String"/>
+				<Property Name="ReservDtClose" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Действителен до" sap:unicode="false" Type="Edm.DateTime" Precision="7"/>
+				<Property Name="ReqChangeRs" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Флаг Редактирования" sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="RemindReserv" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Флаг Редактирования" sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="Executor" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Имя пользователя" sap:unicode="false" MaxLength="12" Nullable="false" Type="Edm.String"/>
+				<Property Name="Action" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Номер"
+					sap:unicode="false" MaxLength="1" Nullable="false" Type="Edm.String"/>
+				<Property Name="TaxUname" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Изменивший"
+					sap:unicode="false" MaxLength="12" Nullable="false" Type="Edm.String"/>
+				<Property Name="TaxAppr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Флаг Редактирования" sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="AccUname" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Изменивший"
+					sap:unicode="false" MaxLength="12" Nullable="false" Type="Edm.String"/>
+				<Property Name="Passl2" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Кем выдан 2"
+					sap:unicode="false" MaxLength="50" Nullable="false" Type="Edm.String"/>
+				<NavigationProperty Name="ToPrePay" ToRole="ToRole_RequestToPrePay" FromRole="FromRole_RequestToPrePay"
+					Relationship="ZHR_FI_TV_REQ_SRV.RequestToPrePay"/>
+				<NavigationProperty Name="ToPass" ToRole="ToRole_RequestToPass" FromRole="FromRole_RequestToPass"
+					Relationship="ZHR_FI_TV_REQ_SRV.RequestToPass"/>
+				<NavigationProperty Name="ToTimeLine" ToRole="ToRole_RequestToTimeLine" FromRole="FromRole_RequestToTimeLine"
+					Relationship="ZHR_FI_TV_REQ_SRV.RequestToTimeLine"/>
+				<NavigationProperty Name="ToRequestExpenses" ToRole="ToRole_RequestToRequestExpenses" FromRole="FromRole_RequestToRequestExpenses"
+					Relationship="ZHR_FI_TV_REQ_SRV.RequestToRequestExpenses"/>
+				<NavigationProperty Name="ToEstimate" ToRole="ToRole_RequestToEstimate" FromRole="FromRole_RequestToEstimate"
+					Relationship="ZHR_FI_TV_REQ_SRV.RequestToEstimate"/>
+				<NavigationProperty Name="ToFile" ToRole="ToRole_RequestToFile" FromRole="FromRole_RequestToFile"
+					Relationship="ZHR_FI_TV_REQ_SRV.RequestToFile"/>
+				<NavigationProperty Name="ToTrips" ToRole="ToRole_RequestToTrips" FromRole="FromRole_RequestToTrips"
+					Relationship="ZHR_FI_TV_REQ_SRV.RequestToTrips"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="RailClass">
+				<Key>
+					<PropertyRef Name="Code"/>
+				</Key>
+				<Property Name="Code" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Name" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Status">
+				<Key>
+					<PropertyRef Name="Status1"/>
+					<PropertyRef Name="Status2"/>
+				</Key>
+				<Property Name="Status1" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Статус 1"
+					sap:unicode="false" MaxLength="1" Nullable="false" Type="Edm.String"/>
+				<Property Name="Status2" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Статус 2"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Type" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Тип"
+					sap:unicode="false" MaxLength="100" Nullable="false" Type="Edm.String"/>
+				<Property Name="Text" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Наименование статуса" sap:unicode="false" MaxLength="100" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="File" m:HasStream="true">
+				<Key>
+					<PropertyRef Name="Reinr"/>
+					<PropertyRef Name="Filename"/>
+				</Key>
+				<Property Name="Reinr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="НомерКомндр"
+					sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="Filename" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Имя файла"
+					sap:unicode="false" MaxLength="32" Nullable="false" Type="Edm.String"/>
+				<Property Name="Uri" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="URI"
+					sap:unicode="false" MaxLength="4096" Nullable="false" Type="Edm.String"/>
+				<Property Name="Mimetype" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="MIME-тип"
+					sap:unicode="false" MaxLength="128" Nullable="false" Type="Edm.String"/>
+				<Property Name="Value" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Двоичная строка"
+					sap:unicode="false" Nullable="false" Type="Edm.Binary"/>
+				<Property Name="Type" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Тип файла"
+					sap:unicode="false" MaxLength="128" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="AutoClass">
+				<Key>
+					<PropertyRef Name="Code"/>
+				</Key>
+				<Property Name="Code" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Name" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="VisaSupport">
+				<Key>
+					<PropertyRef Name="Dept"/>
+				</Key>
+				<Property Name="Dept" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Email" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Tel" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Forms">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="Id" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="int"
+					sap:unicode="false" Nullable="false" Type="Edm.Byte"/>
+				<Property Name="Header" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Text" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Link" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="hasWeekend">
+				<Key>
+					<PropertyRef Name="Flag"/>
+				</Key>
+				<Property Name="Flag" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Флаг"
+					sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="CheckSES">
+				<Key>
+					<PropertyRef Name="SES"/>
+				</Key>
+				<Property Name="SES" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Флаг"
+					sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Reserve">
+				<Key>
+					<PropertyRef Name="Status"/>
+				</Key>
+				<Property Name="Status" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="LoadBooking" m:HasStream="true">
+				<Key>
+					<PropertyRef Name="Pernr"/>
+					<PropertyRef Name="Reinr"/>
+					<PropertyRef Name="Filename"/>
+				</Key>
+				<Property Name="Pernr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="8" Nullable="false" Type="Edm.String"/>
+				<Property Name="Reinr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="Filename" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="32" Nullable="false" Type="Edm.String"/>
+				<Property Name="Mimetype" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="128" Nullable="false" Type="Edm.String"/>
+				<Property Name="Value" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.Binary"/>
+				<Property Name="FileId" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="40" Nullable="false" Type="Edm.String"/>
+				<Property Name="Uri" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="4096" Nullable="false" Type="Edm.String"/>
+				<Property Name="Type" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="128" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Waers">
+				<Key>
+					<PropertyRef Name="WaersCode"/>
+				</Key>
+				<Property Name="WaersCode" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Валюта"
+					sap:unicode="false" MaxLength="5" Nullable="false" Type="Edm.String" sap:semantics="currency-code"/>
+				<Property Name="Ltext" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Подробный текст"
+					sap:unicode="false" MaxLength="40" Nullable="false" Type="Edm.String"/>
+				<Property Name="Ktext" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Краткий текст"
+					sap:unicode="false" MaxLength="15" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Agreement" m:HasStream="true">
+				<Key>
+					<PropertyRef Name="Pernr"/>
+					<PropertyRef Name="Reinr"/>
+					<PropertyRef Name="Filename"/>
+				</Key>
+				<Property Name="Pernr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="8" Nullable="false" Type="Edm.String"/>
+				<Property Name="Reinr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="Filename" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="32" Nullable="false" Type="Edm.String"/>
+				<Property Name="Mimetype" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="128" Nullable="false" Type="Edm.String"/>
+				<Property Name="Value" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.Binary"/>
+				<Property Name="FileId" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="40" Nullable="false" Type="Edm.String"/>
+				<Property Name="Uri" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="4096" Nullable="false" Type="Edm.String"/>
+				<Property Name="Type" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="128" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="RequestExpenses">
+				<Key>
+					<PropertyRef Name="Reinr"/>
+				</Key>
+				<Property Name="Reinr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="НомерКомндр"
+					sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="Pernr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Табельный номер"
+					sap:unicode="false" MaxLength="8" Nullable="false" Type="Edm.String"/>
+				<Property Name="Code" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Вид КомРасходов"
+					sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String"/>
+				<Property Name="Price" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="PRICE"
+					sap:unicode="false" Nullable="false" Type="Edm.Decimal" Precision="10" Scale="0"/>
+				<Property Name="Flag" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="FLAG"
+					sap:unicode="false" MaxLength="1" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="HandlerReturn">
+				<Key>
+					<PropertyRef Name="Reinr"/>
+				</Key>
+				<Property Name="Reinr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="Status" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="2" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="TimeLine">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="Id" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Ид.Объекта"
+					sap:unicode="false" MaxLength="8" Nullable="false" Type="Edm.String"/>
+				<Property Name="Pernr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Табельный номер"
+					sap:unicode="false" MaxLength="8" Nullable="false" Type="Edm.String"/>
+				<Property Name="Reinr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="НомерКомндр"
+					sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="Date" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Дата изменения"
+					sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="Time" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Время изменения"
+					sap:unicode="false" MaxLength="8" Nullable="false" Type="Edm.String"/>
+				<Property Name="StatusText" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Тип операции"
+					sap:unicode="false" MaxLength="40" Nullable="false" Type="Edm.String"/>
+				<Property Name="Commentary" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Комментарий"
+					sap:unicode="false" MaxLength="5000" Nullable="false" Type="Edm.String"/>
+				<Property Name="Username" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="ИмяПользователя" sap:unicode="false" MaxLength="12" Nullable="false" Type="Edm.String"/>
+				<Property Name="Fio" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="ФИО"
+					sap:unicode="false" MaxLength="255" Nullable="false" Type="Edm.String"/>
+				<Property Name="Role" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Роль"
+					sap:unicode="false" MaxLength="40" Nullable="false" Type="Edm.String"/>
+				<Property Name="Status" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Ид.Статуса"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Plnam" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Должность"
+					sap:unicode="false" MaxLength="255" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="TransType">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="Id" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="ID"
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="Name" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="NAME"
+					sap:unicode="false" MaxLength="30" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="isPregnant">
+				<Key>
+					<PropertyRef Name="Flag"/>
+				</Key>
+				<Property Name="Flag" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Флаг"
+					sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="hasKids">
+				<Key>
+					<PropertyRef Name="Flag"/>
+				</Key>
+				<Property Name="Flag" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Флаг"
+					sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Checks">
+				<Key>
+					<PropertyRef Name="Pregnancy"/>
+					<PropertyRef Name="Holidays"/>
+					<PropertyRef Name="PassportExpired"/>
+					<PropertyRef Name="SES"/>
+				</Key>
+				<Property Name="Pregnancy" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Флаг"
+					sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="Holidays" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Флаг"
+					sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="PassportExpired" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Флаг"
+					sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="SES" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Флаг"
+					sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="LoadOrder" m:HasStream="true">
+				<Key>
+					<PropertyRef Name="Reinr"/>
+					<PropertyRef Name="Pernr"/>
+					<PropertyRef Name="Filename"/>
+				</Key>
+				<Property Name="Reinr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="НомерКомндр"
+					sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="Pernr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Табельный номер"
+					sap:unicode="false" MaxLength="8" Nullable="false" Type="Edm.String"/>
+				<Property Name="Filename" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Имя файла"
+					sap:unicode="false" MaxLength="32" Nullable="false" Type="Edm.String"/>
+				<Property Name="Mimetype" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="MIME-тип"
+					sap:unicode="false" MaxLength="128" Nullable="false" Type="Edm.String"/>
+				<Property Name="Value" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Двоичная строка"
+					sap:unicode="false" Nullable="false" Type="Edm.Binary"/>
+				<Property Name="FileId" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Ид. документа"
+					sap:unicode="false" MaxLength="40" Nullable="false" Type="Edm.String"/>
+				<Property Name="Uri" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="URI"
+					sap:unicode="false" MaxLength="4096" Nullable="false" Type="Edm.String"/>
+				<Property Name="Type" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Тип файла"
+					sap:unicode="false" MaxLength="128" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Estimate">
+				<Key>
+					<PropertyRef Name="Zznrbel"/>
+				</Key>
+				<Property Name="Zznrbel" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="№ документа"
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="Zzspkzl" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Вид КомРасходов"
+					sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String"/>
+				<Property Name="Zzwaers" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Валюта"
+					sap:unicode="false" MaxLength="5" Nullable="false" Type="Edm.String"/>
+				<Property Name="Zzmsehi" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Внутренняя ЕИ"
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="Zzmenge" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Количество"
+					sap:unicode="false" Nullable="false" Type="Edm.String"/>
+				<Property Name="Zzpreis" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Цена"
+					sap:unicode="false" Nullable="false" Type="Edm.String"/>
+				<Property Name="Zzwrbtr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Сумма"
+					sap:unicode="false" Nullable="false" Type="Edm.String"/>
+				<Property Name="Zzdmbtr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Сумма во ВВ"
+					sap:unicode="false" Nullable="false" Type="Edm.String"/>
+				<Property Name="Zzlndfr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Страна ком."
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="Sptxt" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Назв. вида расх."
+					sap:unicode="false" MaxLength="30" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Transfer">
+				<Key>
+					<PropertyRef Name="TransferId"/>
+				</Key>
+				<Property Name="TransferId" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Name" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="PrePay">
+				<Key>
+					<PropertyRef Name="Reinr"/>
+					<PropertyRef Name="Receiptno"/>
+				</Key>
+				<Property Name="Reinr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="НомерКомндр"
+					sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="Receiptno" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="№ документа"
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="TSchema" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="СхемаКомндр"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Country" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Страна ком."
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="Region" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="РегионОснПНазн"
+					sap:unicode="false" MaxLength="5" Nullable="false" Type="Edm.String"/>
+				<Property Name="Location" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="МестоНазнач"
+					sap:unicode="false" MaxLength="59" Nullable="false" Type="Edm.String"/>
+				<Property Name="ZzsdescrCode" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Краткая цель" sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="ReasonText" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Длинный текст" sap:unicode="false" MaxLength="500" Nullable="false" Type="Edm.String"/>
+				<Property Name="Zzzuonr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="НомерДоговора"
+					sap:unicode="false" MaxLength="18" Nullable="false" Type="Edm.String"/>
+				<Property Name="ExchangeDate" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="СсылочнДата" sap:unicode="false" Type="Edm.DateTime" Precision="7"/>
+				<Property Name="RetDate" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Возвращ/СвояСтр"
+					sap:unicode="false" Type="Edm.DateTime" Precision="7"/>
+				<Property Name="RetTime" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Врм"
+					sap:unicode="false" Nullable="false" Type="Edm.Time" Precision="0"/>
+				<Property Name="RetCoun" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Страна ком."
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="RetRgio" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="РегионКомндр"
+					sap:unicode="false" MaxLength="5" Nullable="false" Type="Edm.String"/>
+				<Property Name="PdMeals" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Питание/Паушал"
+					sap:unicode="false" MaxLength="1" Nullable="false" Type="Edm.String"/>
+				<Property Name="TActype" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Деятельность"
+					sap:unicode="false" MaxLength="1" Nullable="false" Type="Edm.String"/>
+				<Property Name="Order" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Заказ"
+					sap:unicode="false" MaxLength="12" Nullable="false" Type="Edm.String"/>
+				<Property Name="Zzpvlos" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="УбыткПрошлЛет"
+					sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="Costcenter" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="МВЗ"
+					sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="ExpType" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Вид КомРасходов"
+					sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String"/>
+				<Property Name="RecAmount" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Сумма"
+					sap:unicode="false" Type="Edm.Decimal" Precision="23" Scale="0"/>
+				<Property Name="TaxCode" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Код налога"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Fwste" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Сумма налога"
+					sap:unicode="false" Type="Edm.Decimal" Precision="23" Scale="0"/>
+				<Property Name="RecCurr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Валюта"
+					sap:unicode="false" MaxLength="5" Nullable="false" Type="Edm.String" sap:semantics="currency-code"/>
+				<Property Name="ZzukursC" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Числовое поле (длина 15 знаков)" sap:unicode="false" MaxLength="15" Nullable="false" Type="Edm.String"/>
+				<Property Name="Zzdmbtr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Сумма во ВВ"
+					sap:unicode="false" Type="Edm.Decimal" Precision="14" Scale="2"/>
+				<Property Name="FromDate" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="С даты"
+					sap:unicode="false" Type="Edm.DateTime" Precision="7"/>
+				<Property Name="ToDate" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="По дату"
+					sap:unicode="false" Type="Edm.DateTime" Precision="7"/>
+				<Property Name="Zzmenge" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Количество"
+					sap:unicode="false" Type="Edm.Decimal" Precision="13" Scale="3"/>
+				<Property Name="RecDate" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Дата"
+					sap:unicode="false" Type="Edm.DateTime" Precision="7"/>
+				<Property Name="Descript" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Описание"
+					sap:unicode="false" MaxLength="50" Nullable="false" Type="Edm.String"/>
+				<Property Name="Zzccard" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="КорпоратКарта"
+					sap:unicode="false" MaxLength="30" Nullable="false" Type="Edm.String"/>
+				<Property Name="Zzxndfl" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="ПризнакНДФЛ"
+					sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="Zznuuch" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="ПризнакУЧ/НУ"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Zzfistl" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="ПФМ"
+					sap:unicode="false" MaxLength="16" Nullable="false" Type="Edm.String"/>
+				<Property Name="BusPurpo" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Обоснование"
+					sap:unicode="false" MaxLength="50" Nullable="false" Type="Edm.String"/>
+				<Property Name="PaperReceipt" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Бум. докум. есть" sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<Property Name="ReceiptOk" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Докум. проверен" sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<NavigationProperty Name="ToFile" ToRole="ToRole_PrePayToFile" FromRole="FromRole_PrePayToFile"
+					Relationship="ZHR_FI_TV_REQ_SRV.PrePayToFile"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="ExpType">
+				<Key>
+					<PropertyRef Name="Spkzl"/>
+				</Key>
+				<Property Name="Spkzl" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Вид командировочных расходов" sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String"/>
+				<Property Name="Mwskz" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Код налога с оборота" sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Sptxt" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Название вида командировочных расходов" sap:unicode="false" MaxLength="30" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="TaxNds">
+				<Key>
+					<PropertyRef Name="Mwskz"/>
+				</Key>
+				<Property Name="Mwskz" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Код"
+					sap:unicode="false" Nullable="false" Type="Edm.String"/>
+				<Property Name="Text1" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Значение"
+					sap:unicode="false" MaxLength="50" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Nuuch">
+				<Key>
+					<PropertyRef Name="Code"/>
+				</Key>
+				<Property Name="Name" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Code" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="2" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Deleg">
+				<Key>
+					<PropertyRef Name="Uname"/>
+				</Key>
+				<Property Name="Uname" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="ИмяПользователя"
+					sap:unicode="false" MaxLength="12" Nullable="false" Type="Edm.String"/>
+				<Property Name="Fio" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="ФИО"
+					sap:unicode="false" MaxLength="255" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Org">
+				<Key>
+					<PropertyRef Name="Code"/>
+				</Key>
+				<Property Name="Code" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Name" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Country">
+				<Key>
+					<PropertyRef Name="Code"/>
+				</Key>
+				<Property Name="Code" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Name" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="15" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Expenses">
+				<Key>
+					<PropertyRef Name="Code"/>
+				</Key>
+				<Property Name="Code" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="4" Nullable="false" Type="Edm.String"/>
+				<Property Name="Name" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="30" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="RequestList">
+				<Key>
+					<PropertyRef Name="Reinr"/>
+					<PropertyRef Name="Pernr"/>
+				</Key>
+				<Property Name="Reinr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Pernr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Status1" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Surname" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Inits" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="DateBegin" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Type="Edm.DateTime" Precision="0"/>
+				<Property Name="DateEnd" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Type="Edm.DateTime" Precision="0"/>
+				<Property Name="DateCreate" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Метка времени" sap:unicode="false" Type="Edm.DateTime" Precision="0"/>
+				<Property Name="City" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Country" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="StatusText1" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="StatusText2" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="TransType" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="TripGoal" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="PersResp" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Executor" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="BookingStatus" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="AppID" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Status2" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Subty" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="ReservUname" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="ReservSt" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="ReservStText" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="OrderStatus" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="OrderStatusText" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="RequestType" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="TaxAppr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="TaxUname" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="AccUname" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Uname" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<NavigationProperty Name="ToTrips" ToRole="ToRole_RequestListToTrips" FromRole="FromRole_RequestListToTrips"
+					Relationship="ZHR_FI_TV_REQ_SRV.RequestListToTrips"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="RequestType">
+				<Key>
+					<PropertyRef Name="Code"/>
+				</Key>
+				<Property Name="Code" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="4" Nullable="false" Type="Edm.String"/>
+				<Property Name="Name" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="60" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="PayType">
+				<Key>
+					<PropertyRef Name="Code"/>
+				</Key>
+				<Property Name="Code" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Name" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="TransFrom">
+				<Key>
+					<PropertyRef Name="Reinr"/>
+					<PropertyRef Name="ItineraryNumber"/>
+					<PropertyRef Name="Request"/>
+				</Key>
+				<Property Name="Reinr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="НомерКомндр"
+					sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="TypeClass" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Правило классов" sap:unicode="false" MaxLength="8" Nullable="false" Type="Edm.String"/>
+				<Property Name="ItineraryNumber" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="№ этапа команд." sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Request" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Номер запроса"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Pernr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Табельный номер"
+					sap:unicode="false" MaxLength="8" Nullable="false" Type="Edm.String"/>
+				<Property Name="Region" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Регион"
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="Payment" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="PAYTYPE"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="DateBegin" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Начальная дата" sap:unicode="false" Type="Edm.DateTime" Precision="7"/>
+				<Property Name="TimeBeg" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Начальное время"
+					sap:unicode="false" Type="Edm.Time" Precision="0"/>
+				<Property Name="DateEnd" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Конечная дата"
+					sap:unicode="false" Type="Edm.DateTime" Precision="7"/>
+				<Property Name="TimeEnd" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Конечное время"
+					sap:unicode="false" Type="Edm.Time" Precision="0"/>
+				<Property Name="CityFrom" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Начальный пункт" sap:unicode="false" MaxLength="59" Nullable="false" Type="Edm.String"/>
+				<Property Name="CountryBeg" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Страна"
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="CityTo" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Город"
+					sap:unicode="false" MaxLength="40" Nullable="false" Type="Edm.String"/>
+				<Property Name="CountryEnd" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Страна"
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="Price" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Цена"
+					sap:unicode="false" Nullable="false" Type="Edm.Decimal" Precision="11" Scale="0"/>
+				<Property Name="RequestType" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Т/поз. команд." sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="ClassAir" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Класс обслуживания" sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Airline" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Авиакомпания"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="FlightNumber" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Номер предпочтительного рейса" sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="Baggage" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Багаж"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Transfer" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Трансфер на месте" sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="TransferCost" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Стоимость трансфера" sap:unicode="false" MaxLength="20" Nullable="false" Type="Edm.String"/>
+				<Property Name="ClassRail" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Класс обслуживания ЖД" sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="Direction" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Флаг"
+					sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<NavigationProperty Name="ToFile" ToRole="ToRole_TransFromToFile" FromRole="FromRole_TransFromToFile"
+					Relationship="ZHR_FI_TV_REQ_SRV.TransFromToFile"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="TransTo">
+				<Key>
+					<PropertyRef Name="Reinr"/>
+					<PropertyRef Name="ItineraryNumber"/>
+					<PropertyRef Name="Request"/>
+				</Key>
+				<Property Name="Reinr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="НомерКомндр"
+					sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="TypeClass" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Правило классов" sap:unicode="false" MaxLength="8" Nullable="false" Type="Edm.String"/>
+				<Property Name="ItineraryNumber" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="№ этапа команд." sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Request" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Номер запроса"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Pernr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Табельный номер"
+					sap:unicode="false" MaxLength="8" Nullable="false" Type="Edm.String"/>
+				<Property Name="Region" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Регион"
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="DateBegin" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Начальная дата" sap:unicode="false" Type="Edm.DateTime" Precision="7"/>
+				<Property Name="TimeBeg" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Начальное время"
+					sap:unicode="false" Type="Edm.Time" Precision="0"/>
+				<Property Name="DateEnd" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Конечная дата"
+					sap:unicode="false" Type="Edm.DateTime" Precision="7"/>
+				<Property Name="TimeEnd" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Конечное время"
+					sap:unicode="false" Type="Edm.Time" Precision="0"/>
+				<Property Name="CityFrom" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Начальный пункт" sap:unicode="false" MaxLength="59" Nullable="false" Type="Edm.String"/>
+				<Property Name="CountryBeg" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Страна"
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="CityTo" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Город"
+					sap:unicode="false" MaxLength="40" Nullable="false" Type="Edm.String"/>
+				<Property Name="CountryEnd" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Страна"
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="Price" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Цена"
+					sap:unicode="false" Nullable="false" Type="Edm.Decimal" Precision="11" Scale="0"/>
+				<Property Name="RequestType" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Т/поз. команд." sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Payment" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Тип оплаты"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="ClassAir" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Класс обслуживания" sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Airline" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Авиакомпания"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="FlightNumber" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Номер предпочтительного рейса" sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="Baggage" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Багаж"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Transfer" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Трансфер на месте" sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="TransferCost" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Стоимость трансфера" sap:unicode="false" MaxLength="20" Nullable="false" Type="Edm.String"/>
+				<Property Name="ClassRail" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Класс обслуживания ЖД" sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="Direction" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Флаг"
+					sap:unicode="false" Nullable="false" Type="Edm.Boolean"/>
+				<NavigationProperty Name="ToFile" ToRole="ToRole_TransToToFile" FromRole="FromRole_TransToToFile"
+					Relationship="ZHR_FI_TV_REQ_SRV.TransToToFile"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="TransHotel">
+				<Key>
+					<PropertyRef Name="Reinr"/>
+					<PropertyRef Name="ItineraryNumber"/>
+					<PropertyRef Name="Request"/>
+				</Key>
+				<Property Name="Reinr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="НомерКомндр"
+					sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="ItineraryNumber" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="№ этапа команд." sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Request" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Номер запроса"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="Pernr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Табельный номер"
+					sap:unicode="false" MaxLength="8" Nullable="false" Type="Edm.String"/>
+				<Property Name="Region" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Регион"
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="Payment" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Тип оплаты"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="DateBegin" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Начальная дата" sap:unicode="false" Type="Edm.DateTime" Precision="0"/>
+				<Property Name="TimeBeg" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Начальное время"
+					sap:unicode="false" Type="Edm.Time" Precision="0"/>
+				<Property Name="DateEnd" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Конечная дата"
+					sap:unicode="false" Type="Edm.DateTime" Precision="0"/>
+				<Property Name="TimeEnd" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Конечное время"
+					sap:unicode="false" Type="Edm.Time" Precision="0"/>
+				<Property Name="CityFrom" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Начальный пункт" sap:unicode="false" MaxLength="59" Nullable="false" Type="Edm.String"/>
+				<Property Name="CountryBeg" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Страна"
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="CityTo" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Конечный пункт"
+					sap:unicode="false" MaxLength="59" Nullable="false" Type="Edm.String"/>
+				<Property Name="CountryEnd" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Страна"
+					sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="Price" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Цена"
+					sap:unicode="false" Nullable="false" Type="Edm.Decimal" Precision="11" Scale="0"/>
+				<Property Name="RequestType" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Т/поз. команд." sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="ClassHotel" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Класс гостиницы" sap:unicode="false" Nullable="false" Type="Edm.Decimal" Precision="31" Scale="0"/>
+				<Property Name="ClassRoom" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Класс номера"
+					sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="HotelOption" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Предпочтительный вариант гостиницы" sap:unicode="false" MaxLength="255" Nullable="false" Type="Edm.String"/>
+				<Property Name="DateTimeBeg" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Метка времени" sap:unicode="false" Type="Edm.DateTime" Precision="0"/>
+				<Property Name="DateTimeEnd" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Метка времени" sap:unicode="false" Type="Edm.DateTime" Precision="0"/>
+				<NavigationProperty Name="ToFile" ToRole="ToRole_TransHotelToFile" FromRole="FromRole_TransHotelToFile"
+					Relationship="ZHR_FI_TV_REQ_SRV.TransHotelToFile"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="TripGoals">
+				<Key>
+					<PropertyRef Name="Code"/>
+				</Key>
+				<Property Name="Code" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="Name" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="GoalType" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="City">
+				<Key>
+					<PropertyRef Name="Code"/>
+					<PropertyRef Name="CountryCode"/>
+					<PropertyRef Name="RegionCode"/>
+					<PropertyRef Name="AreaCode"/>
+				</Key>
+				<Property Name="Code" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Name" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="CountryCode" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="RegionCode" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Region" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="AreaCode" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Area" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Type" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Region">
+				<Key>
+					<PropertyRef Name="Code"/>
+				</Key>
+				<Property Name="Code" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Name" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="CountryCode" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="User">
+				<Key>
+					<PropertyRef Name="Pernr"/>
+					<PropertyRef Name="Subty"/>
+					<PropertyRef Name="Nomer"/>
+				</Key>
+				<Property Name="Pernr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="8" Nullable="false" Type="Edm.String"/>
+				<Property Name="Uname" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					MaxLength="12" Nullable="false" Type="Edm.String"/>
+				<Property Name="Position" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Phone" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Fio" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Subty" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Nomer" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Номер документа, удостоверяющего личность" sap:unicode="false" Nullable="false" Type="Edm.String"/>
+				<Property Name="Seria" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Код серии документа" sap:unicode="false" Nullable="false" Type="Edm.String"/>
+				<Property Name="Seri0" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Серия (часть 2)"
+					sap:unicode="false" Nullable="false" Type="Edm.String"/>
+				<Property Name="Passl" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Орган, выдавший документ" sap:unicode="false" Nullable="false" Type="Edm.String"/>
+				<Property Name="Datbg" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Дата выдачи"
+					sap:unicode="false" Type="Edm.DateTime" Precision="0"/>
+				<Property Name="Pcode" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Код подразделения"
+					sap:unicode="false" Nullable="false" Type="Edm.String"/>
+				<Property Name="Department" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Name" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Surname" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Citizenship" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="ExpireDate" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Дата"
+					sap:unicode="false" Type="Edm.DateTime" Precision="0"/>
+				<NavigationProperty Name="ToPass" ToRole="ToRole_UserToPass" FromRole="FromRole_UserToPass" Relationship="ZHR_FI_TV_REQ_SRV.UserToPass"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="AviaClass">
+				<Key>
+					<PropertyRef Name="Code"/>
+				</Key>
+				<Property Name="Code" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Name" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="HotelClass">
+				<Key>
+					<PropertyRef Name="Code"/>
+				</Key>
+				<Property Name="Code" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Name" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Employees">
+				<Key>
+					<PropertyRef Name="Pernr"/>
+				</Key>
+				<Property Name="Pernr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Fio" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="PassType">
+				<Key>
+					<PropertyRef Name="Pernr"/>
+					<PropertyRef Name="Reinr"/>
+					<PropertyRef Name="Nomer"/>
+					<PropertyRef Name="Subty"/>
+				</Key>
+				<Property Name="Pernr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Reinr" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Nomer" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Seria" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Seri0" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Name" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Subty" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Datbg" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Дата"
+					sap:unicode="false" Type="Edm.DateTime" Precision="0"/>
+				<Property Name="ExpireDate" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Type="Edm.DateTime" Precision="0"/>
+				<Property Name="NamePass" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="LastNamePass" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Citizenship" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Passl" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Pcode" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="Passl2" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:unicode="false"
+					Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<Association sap:content-version="1" Name="PrePayToFile">
+				<End Type="ZHR_FI_TV_REQ_SRV.PrePay" Role="FromRole_PrePayToFile" Multiplicity="1"/>
+				<End Type="ZHR_FI_TV_REQ_SRV.File" Role="ToRole_PrePayToFile" Multiplicity="*"/>
+			</Association>
+			<Association sap:content-version="1" Name="TripToTransFrom">
+				<End Type="ZHR_FI_TV_REQ_SRV.Trip" Role="FromRole_TripToTransFrom" Multiplicity="1"/>
+				<End Type="ZHR_FI_TV_REQ_SRV.TransFrom" Role="ToRole_TripToTransFrom" Multiplicity="*"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_TripToTransFrom">
+						<PropertyRef Name="Request"/>
+						<PropertyRef Name="Reinr"/>
+						<PropertyRef Name="ItineraryNumber"/>
+					</Principal>
+					<Dependent Role="ToRole_TripToTransFrom">
+						<PropertyRef Name="Request"/>
+						<PropertyRef Name="Reinr"/>
+						<PropertyRef Name="ItineraryNumber"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association sap:content-version="1" Name="TripToTransTo">
+				<End Type="ZHR_FI_TV_REQ_SRV.Trip" Role="FromRole_TripToTransTo" Multiplicity="1"/>
+				<End Type="ZHR_FI_TV_REQ_SRV.TransTo" Role="ToRole_TripToTransTo" Multiplicity="*"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_TripToTransTo">
+						<PropertyRef Name="Request"/>
+						<PropertyRef Name="ItineraryNumber"/>
+						<PropertyRef Name="Reinr"/>
+					</Principal>
+					<Dependent Role="ToRole_TripToTransTo">
+						<PropertyRef Name="Request"/>
+						<PropertyRef Name="ItineraryNumber"/>
+						<PropertyRef Name="Reinr"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association sap:content-version="1" Name="TripToTransHotel">
+				<End Type="ZHR_FI_TV_REQ_SRV.Trip" Role="FromRole_TripToTransHotel" Multiplicity="1"/>
+				<End Type="ZHR_FI_TV_REQ_SRV.TransHotel" Role="ToRole_TripToTransHotel" Multiplicity="*"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_TripToTransHotel">
+						<PropertyRef Name="Request"/>
+						<PropertyRef Name="Reinr"/>
+						<PropertyRef Name="ItineraryNumber"/>
+					</Principal>
+					<Dependent Role="ToRole_TripToTransHotel">
+						<PropertyRef Name="Request"/>
+						<PropertyRef Name="Reinr"/>
+						<PropertyRef Name="ItineraryNumber"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association sap:content-version="1" Name="UserToPass">
+				<End Type="ZHR_FI_TV_REQ_SRV.User" Role="FromRole_UserToPass" Multiplicity="1"/>
+				<End Type="ZHR_FI_TV_REQ_SRV.PassType" Role="ToRole_UserToPass" Multiplicity="*"/>
+			</Association>
+			<Association sap:content-version="1" Name="TransFromToFile">
+				<End Type="ZHR_FI_TV_REQ_SRV.TransFrom" Role="FromRole_TransFromToFile" Multiplicity="1"/>
+				<End Type="ZHR_FI_TV_REQ_SRV.File" Role="ToRole_TransFromToFile" Multiplicity="*"/>
+			</Association>
+			<Association sap:content-version="1" Name="TransToToFile">
+				<End Type="ZHR_FI_TV_REQ_SRV.TransTo" Role="FromRole_TransToToFile" Multiplicity="1"/>
+				<End Type="ZHR_FI_TV_REQ_SRV.File" Role="ToRole_TransToToFile" Multiplicity="*"/>
+			</Association>
+			<Association sap:content-version="1" Name="RequestToRequestExpenses">
+				<End Type="ZHR_FI_TV_REQ_SRV.Request" Role="FromRole_RequestToRequestExpenses" Multiplicity="1"/>
+				<End Type="ZHR_FI_TV_REQ_SRV.RequestExpenses" Role="ToRole_RequestToRequestExpenses" Multiplicity="*"/>
+			</Association>
+			<Association sap:content-version="1" Name="RequestToFile">
+				<End Type="ZHR_FI_TV_REQ_SRV.Request" Role="FromRole_RequestToFile" Multiplicity="1"/>
+				<End Type="ZHR_FI_TV_REQ_SRV.File" Role="ToRole_RequestToFile" Multiplicity="*"/>
+			</Association>
+			<Association sap:content-version="1" Name="RequestToEstimate">
+				<End Type="ZHR_FI_TV_REQ_SRV.Request" Role="FromRole_RequestToEstimate" Multiplicity="1"/>
+				<End Type="ZHR_FI_TV_REQ_SRV.Estimate" Role="ToRole_RequestToEstimate" Multiplicity="*"/>
+			</Association>
+			<Association sap:content-version="1" Name="RequestToTimeLine">
+				<End Type="ZHR_FI_TV_REQ_SRV.Request" Role="FromRole_RequestToTimeLine" Multiplicity="1"/>
+				<End Type="ZHR_FI_TV_REQ_SRV.TimeLine" Role="ToRole_RequestToTimeLine" Multiplicity="*"/>
+			</Association>
+			<Association sap:content-version="1" Name="RequestToPass">
+				<End Type="ZHR_FI_TV_REQ_SRV.Request" Role="FromRole_RequestToPass" Multiplicity="1"/>
+				<End Type="ZHR_FI_TV_REQ_SRV.PassType" Role="ToRole_RequestToPass" Multiplicity="*"/>
+			</Association>
+			<Association sap:content-version="1" Name="RequestToPrePay">
+				<End Type="ZHR_FI_TV_REQ_SRV.Request" Role="FromRole_RequestToPrePay" Multiplicity="1"/>
+				<End Type="ZHR_FI_TV_REQ_SRV.PrePay" Role="ToRole_RequestToPrePay" Multiplicity="*"/>
+			</Association>
+			<Association sap:content-version="1" Name="RequestToTrips">
+				<End Type="ZHR_FI_TV_REQ_SRV.Request" Role="FromRole_RequestToTrips" Multiplicity="1"/>
+				<End Type="ZHR_FI_TV_REQ_SRV.Trip" Role="ToRole_RequestToTrips" Multiplicity="*"/>
+			</Association>
+			<Association sap:content-version="1" Name="RequestListToTrips">
+				<End Type="ZHR_FI_TV_REQ_SRV.RequestList" Role="FromRole_RequestListToTrips" Multiplicity="1"/>
+				<End Type="ZHR_FI_TV_REQ_SRV.Trip" Role="ToRole_RequestListToTrips" Multiplicity="*"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_RequestListToTrips">
+						<PropertyRef Name="Reinr"/>
+						<PropertyRef Name="Pernr"/>
+					</Principal>
+					<Dependent Role="ToRole_RequestListToTrips">
+						<PropertyRef Name="Reinr"/>
+						<PropertyRef Name="Pernr"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association sap:content-version="1" Name="TransHotelToFile">
+				<End Type="ZHR_FI_TV_REQ_SRV.TransHotel" Role="FromRole_TransHotelToFile" Multiplicity="1"/>
+				<End Type="ZHR_FI_TV_REQ_SRV.File" Role="ToRole_TransHotelToFile" Multiplicity="*"/>
+			</Association>
+			<EntityContainer Name="ZHR_FI_TV_REQ_SRV_Entities" sap:supported-formats="atom json xlsx" m:IsDefaultEntityContainer="true">
+				<EntitySet sap:content-version="1" Name="TripSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.Trip"/>
+				<EntitySet sap:content-version="1" Name="RequestSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.Request"/>
+				<EntitySet sap:content-version="1" Name="RailClassSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZHR_FI_TV_REQ_SRV.RailClass" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="StatusSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.Status" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="FileSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.File" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="AutoClassSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZHR_FI_TV_REQ_SRV.AutoClass" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="VisaSupportSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZHR_FI_TV_REQ_SRV.VisaSupport" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="FormsSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.Forms" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="hasWeekendSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZHR_FI_TV_REQ_SRV.hasWeekend" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="SESSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.CheckSES" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="ReserveSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.Reserve" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="LoadBookingSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZHR_FI_TV_REQ_SRV.LoadBooking" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="WaersSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.Waers"/>
+				<EntitySet sap:content-version="1" Name="AgreementSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZHR_FI_TV_REQ_SRV.Agreement" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="RequestExpensesSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZHR_FI_TV_REQ_SRV.RequestExpenses" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="HandlerReturnSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZHR_FI_TV_REQ_SRV.HandlerReturn" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="TimeLineSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.TimeLine" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="TransTypeSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZHR_FI_TV_REQ_SRV.TransType" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="isPregnantSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZHR_FI_TV_REQ_SRV.isPregnant" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="hasKidsSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.hasKids" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="ChecksSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.Checks" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="LoadOrder" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.LoadOrder" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="EstimateSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.Estimate"/>
+				<EntitySet sap:content-version="1" Name="TransferSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.Transfer" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="PrePaySet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.PrePay"/>
+				<EntitySet sap:content-version="1" Name="ExpTypeSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.ExpType" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="TaxNdsSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.TaxNds" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="NuuchSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.Nuuch" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="DelegSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.Deleg" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="OrgSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.Org" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="CountrySet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.Country" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="ExpensesSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.Expenses" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="RequestListSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZHR_FI_TV_REQ_SRV.RequestList" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="RequestTypeSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZHR_FI_TV_REQ_SRV.RequestType" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="PayTypeSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.PayType" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="TransFromSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZHR_FI_TV_REQ_SRV.TransFrom"/>
+				<EntitySet sap:content-version="1" Name="TransToSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.TransTo"/>
+				<EntitySet sap:content-version="1" Name="TransHotelSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZHR_FI_TV_REQ_SRV.TransHotel"/>
+				<EntitySet sap:content-version="1" Name="TripGoalsSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZHR_FI_TV_REQ_SRV.TripGoals" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="CitySet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.City" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="RegionSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.Region" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="UserSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.User"/>
+				<EntitySet sap:content-version="1" Name="AviaClassSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZHR_FI_TV_REQ_SRV.AviaClass" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="HotelClassSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZHR_FI_TV_REQ_SRV.HotelClass" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="EmployeesSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZHR_FI_TV_REQ_SRV.Employees" sap:addressable="false"/>
+				<EntitySet sap:content-version="1" Name="PassTypeSet" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZHR_FI_TV_REQ_SRV.PassType" sap:addressable="false"/>
+				<AssociationSet sap:content-version="1" Name="RequestToPrePaySet" sap:updatable="false" sap:creatable="false" sap:deletable="false"
+					Association="ZHR_FI_TV_REQ_SRV.RequestToPrePay">
+					<End Role="FromRole_RequestToPrePay" EntitySet="RequestSet"/>
+					<End Role="ToRole_RequestToPrePay" EntitySet="PrePaySet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="RequestToTimeLine" sap:updatable="false" sap:creatable="false" sap:deletable="false"
+					Association="ZHR_FI_TV_REQ_SRV.RequestToTimeLine">
+					<End Role="FromRole_RequestToTimeLine" EntitySet="RequestSet"/>
+					<End Role="ToRole_RequestToTimeLine" EntitySet="TimeLineSet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="TripToTransTo_AssocSet" sap:updatable="false" sap:creatable="false" sap:deletable="false"
+					Association="ZHR_FI_TV_REQ_SRV.TripToTransTo">
+					<End Role="FromRole_TripToTransTo" EntitySet="TripSet"/>
+					<End Role="ToRole_TripToTransTo" EntitySet="TransToSet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="RequestToRequestExpensesSet" sap:updatable="false" sap:creatable="false" sap:deletable="false"
+					Association="ZHR_FI_TV_REQ_SRV.RequestToRequestExpenses">
+					<End Role="FromRole_RequestToRequestExpenses" EntitySet="RequestSet"/>
+					<End Role="ToRole_RequestToRequestExpenses" EntitySet="RequestExpensesSet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="TripToTransFrom_AssocSet" sap:updatable="false" sap:creatable="false" sap:deletable="false"
+					Association="ZHR_FI_TV_REQ_SRV.TripToTransFrom">
+					<End Role="FromRole_TripToTransFrom" EntitySet="TripSet"/>
+					<End Role="ToRole_TripToTransFrom" EntitySet="TransFromSet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="PrePayToFileSet" sap:updatable="false" sap:creatable="false" sap:deletable="false"
+					Association="ZHR_FI_TV_REQ_SRV.PrePayToFile">
+					<End Role="FromRole_PrePayToFile" EntitySet="PrePaySet"/>
+					<End Role="ToRole_PrePayToFile" EntitySet="FileSet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="RequestToPassSet" sap:updatable="false" sap:creatable="false" sap:deletable="false"
+					Association="ZHR_FI_TV_REQ_SRV.RequestToPass">
+					<End Role="FromRole_RequestToPass" EntitySet="RequestSet"/>
+					<End Role="ToRole_RequestToPass" EntitySet="PassTypeSet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="RequestToFileSet" sap:updatable="false" sap:creatable="false" sap:deletable="false"
+					Association="ZHR_FI_TV_REQ_SRV.RequestToFile">
+					<End Role="FromRole_RequestToFile" EntitySet="RequestSet"/>
+					<End Role="ToRole_RequestToFile" EntitySet="FileSet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="TripToTransHotel_AssocSet" sap:updatable="false" sap:creatable="false" sap:deletable="false"
+					Association="ZHR_FI_TV_REQ_SRV.TripToTransHotel">
+					<End Role="FromRole_TripToTransHotel" EntitySet="TripSet"/>
+					<End Role="ToRole_TripToTransHotel" EntitySet="TransHotelSet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="RequestToEstimateSet" sap:updatable="false" sap:creatable="false" sap:deletable="false"
+					Association="ZHR_FI_TV_REQ_SRV.RequestToEstimate">
+					<End Role="FromRole_RequestToEstimate" EntitySet="RequestSet"/>
+					<End Role="ToRole_RequestToEstimate" EntitySet="EstimateSet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="UserToPass_AssocSet" sap:updatable="false" sap:creatable="false" sap:deletable="false"
+					Association="ZHR_FI_TV_REQ_SRV.UserToPass">
+					<End Role="FromRole_UserToPass" EntitySet="UserSet"/>
+					<End Role="ToRole_UserToPass" EntitySet="PassTypeSet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="TransFromToFileSet" sap:updatable="false" sap:creatable="false" sap:deletable="false"
+					Association="ZHR_FI_TV_REQ_SRV.TransFromToFile">
+					<End Role="FromRole_TransFromToFile" EntitySet="TransFromSet"/>
+					<End Role="ToRole_TransFromToFile" EntitySet="FileSet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="RequestToTripsSet" sap:updatable="false" sap:creatable="false" sap:deletable="false"
+					Association="ZHR_FI_TV_REQ_SRV.RequestToTrips">
+					<End Role="FromRole_RequestToTrips" EntitySet="RequestSet"/>
+					<End Role="ToRole_RequestToTrips" EntitySet="TripSet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="RequestListToTrips_AssocSet" sap:updatable="false" sap:creatable="false" sap:deletable="false"
+					Association="ZHR_FI_TV_REQ_SRV.RequestListToTrips">
+					<End Role="FromRole_RequestListToTrips" EntitySet="RequestListSet"/>
+					<End Role="ToRole_RequestListToTrips" EntitySet="TripSet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="TransToToFileSet" sap:updatable="false" sap:creatable="false" sap:deletable="false"
+					Association="ZHR_FI_TV_REQ_SRV.TransToToFile">
+					<End Role="FromRole_TransToToFile" EntitySet="TransToSet"/>
+					<End Role="ToRole_TransToToFile" EntitySet="FileSet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="TransHotelToFileSet" sap:updatable="false" sap:creatable="false" sap:deletable="false"
+					Association="ZHR_FI_TV_REQ_SRV.TransHotelToFile">
+					<End Role="FromRole_TransHotelToFile" EntitySet="TransHotelSet"/>
+					<End Role="ToRole_TransHotelToFile" EntitySet="FileSet"/>
+				</AssociationSet>
+				<FunctionImport Name="Approve" sap:label="Согласовать" EntitySet="HandlerReturnSet" m:HttpMethod="GET"
+					ReturnType="ZHR_FI_TV_REQ_SRV.HandlerReturn">
+					<Parameter Name="Reinr" MaxLength="10" Type="Edm.String" Mode="In"/>
+					<Parameter Name="Uname" Type="Edm.String" Mode="In"/>
+					<Parameter Name="AppId" Type="Edm.String" Mode="In"/>
+				</FunctionImport>
+				<FunctionImport Name="NotApprove" sap:label="Отклонить" EntitySet="HandlerReturnSet" m:HttpMethod="GET"
+					ReturnType="ZHR_FI_TV_REQ_SRV.HandlerReturn">
+					<Parameter Name="Comment" MaxLength="255" Type="Edm.String" Mode="In"/>
+					<Parameter Name="Reinr" MaxLength="10" Type="Edm.String" Mode="In"/>
+					<Parameter Name="Uname" Type="Edm.String" Mode="In"/>
+					<Parameter Name="AppId" Type="Edm.String" Mode="In"/>
+				</FunctionImport>
+				<FunctionImport Name="CheckPregnancy" sap:label="Проверка на беременность" EntitySet="isPregnantSet" m:HttpMethod="GET"
+					ReturnType="ZHR_FI_TV_REQ_SRV.isPregnant"/>
+				<FunctionImport Name="CheckWeekend" EntitySet="hasWeekendSet" m:HttpMethod="GET" ReturnType="ZHR_FI_TV_REQ_SRV.hasWeekend">
+					<Parameter Name="Datbg" Type="Edm.DateTime" Precision="0" Mode="In"/>
+					<Parameter Name="Daten" Type="Edm.DateTime" Precision="0" Mode="In"/>
+				</FunctionImport>
+				<FunctionImport Name="SES" sap:label="Проверка наличия ПЭП" EntitySet="SESSet" m:HttpMethod="GET" ReturnType="ZHR_FI_TV_REQ_SRV.CheckSES"/>
+				<FunctionImport Name="Reserve" sap:label="Изменение статуса бронирования" EntitySet="ReserveSet" m:HttpMethod="GET"
+					ReturnType="ZHR_FI_TV_REQ_SRV.Reserve">
+					<Parameter Name="Pernr" Type="Edm.String" Mode="In"/>
+					<Parameter Name="Reinr" Type="Edm.String" Mode="In"/>
+					<Parameter Name="Status" Type="Edm.String" Mode="In"/>
+					<Parameter Name="Message" Type="Edm.String" Mode="In"/>
+					<Parameter Name="AppId" Type="Edm.String" Mode="In"/>
+				</FunctionImport>
+				<FunctionImport Name="TRHandler" sap:label="Обработчик заявки на командировку" EntitySet="HandlerReturnSet" m:HttpMethod="GET"
+					ReturnType="ZHR_FI_TV_REQ_SRV.HandlerReturn">
+					<Parameter Name="Comment" MaxLength="255" Type="Edm.String" Mode="In"/>
+					<Parameter Name="Reinr" MaxLength="10" Type="Edm.String" Mode="In"/>
+					<Parameter Name="Status" MaxLength="2" Type="Edm.String" Mode="In"/>
+				</FunctionImport>
+				<FunctionImport Name="VisaSupport" sap:label="Отдел визовой поддержки" EntitySet="VisaSupportSet" m:HttpMethod="GET"
+					ReturnType="ZHR_FI_TV_REQ_SRV.VisaSupport"/>
+				<FunctionImport Name="Checks" EntitySet="ChecksSet" m:HttpMethod="GET" ReturnType="ZHR_FI_TV_REQ_SRV.Checks">
+					<Parameter Name="DateBeg" Type="Edm.DateTime" Precision="0" Mode="In"/>
+					<Parameter Name="DateEnd" Type="Edm.DateTime" Precision="0" Mode="In"/>
+				</FunctionImport>
+			</EntityContainer>
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="http://SAPHR3.ROSNEFT.RU:8121/sap/opu/odata/sap/ZHR_FI_TV_REQ_SRV/$metadata"
+				rel="self"/>
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="http://SAPHR3.ROSNEFT.RU:8121/sap/opu/odata/sap/ZHR_FI_TV_REQ_SRV/$metadata"
+				rel="latest-version"/>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

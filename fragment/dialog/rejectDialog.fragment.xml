@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>message}" stretch="{device>/system/phone}" class="sapUiContentPadding" id="rejectDialog">
+		<content>
+			<Label text="{i18n>rejectDialog}"/>
+			<TextArea valueStateText="{i18n>minMax}" id="msg" valueState="Warning" showValueStateMessage="true" data:length="20"
+				data:checkButton="rejectDialogButton" rows="3" liveChange="objectCheckLength" showExceededText="true" cols="100" growing="true"
+				maxLength="5000"/>
+		</content>
+		<buttons>
+			<Button text="{i18n>cancel}" data:id="rejectDialog" type="Back" press="okDialog"/>
+			<Button type="Reject" text="{i18n>reject}" press="onChangeStatus" enabled="false" id="rejectDialogButton" data:id="rejectDialog"
+				data:status="02"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

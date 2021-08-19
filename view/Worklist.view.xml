@@ -1,0 +1,125 @@
+<mvc:View controllerName="ZHR_FI_TV_RES.ZHR_FI_TV_RES.controller.Worklist" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:t="sap.ui.table"
+	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<semantic:SemanticPage id="page" class="customSemanticPage" headerPinnable="true" preserveHeaderStateOnScroll="true"
+		toggleHeaderOnTitleClick="true">
+		<semantic:titleHeading>
+			<Title text="{i18n>worklistTitle}"/>
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<HBox wrap="Wrap" width="100%" justifyContent="SpaceBetween" alignItems="End">
+				<VBox width="calc(12.5% - .5rem)">
+					<Label text="{i18n>reinr}"/>
+					<Input placeholder="Введите № заявки" value="{Reinr}" width="100%" name="Reinr" data:op="Contains"></Input>
+				</VBox>
+				<VBox width="calc(12.5% - .5rem)">
+					<Label text="{i18n>Surname}"/>
+					<Input placeholder="Введите фамилию" value="{Surname}" width="100%" name="Surname" data:op="Contains"></Input>
+				</VBox>
+				<VBox width="calc(12.5% - .5rem)">
+					<Label text="{i18n>dateBeginEnd}"/>
+					<DateRangeSelection placeholder="{i18n>dateRangePlaceholder}" dateValue="{DateBegin}" secondDateValue="{DateEnd}" width="100%"
+						name="DateBegin~DateEnd" valueFormat="yyyy-MM-dd" data:op="BT"/>
+				</VBox>
+				<VBox width="calc(12.5% - .5rem)">
+					<Label text="{i18n>country}"/>
+					<ComboBox items="{path: '/CountrySet', templateShareable: false }" width="100%" filterSecondaryValues="true"
+						placeholder="{i18n>chooseCountry}" showSecondaryValues="true" name="Country" selectedKey="{Country}" id="CountrySet" data:pernr="{Pernr}"
+						data:filter="{Country}" data:op="EQ">
+						<items>
+							<core:ListItem text="{Name}" key="{Code}" additionalText="{Code}"/>
+						</items>
+					</ComboBox>
+				</VBox>
+				<VBox width="calc(12.5% - .5rem)">
+					<Label text="{i18n>city}"/>
+					<Input placeholder="{i18n>enterCity}" value="{City}" width="100%" name="City" data:op="Contains"></Input>
+				</VBox>
+				<VBox width="calc(12.5% - .5rem)">
+					<Label text="{i18n>requestGoal}"/>
+					<ComboBox placeholder="Выберите цель" items="{path: '/TripGoalsSet', templateShareable: false }" width="100%" filterSecondaryValues="true"
+						name="TripGoal" selectedKey="{TripGoal}" id="TripGoalsSet" data:op="EQ">
+						<items>
+							<core:ListItem text="{Name}" key="{Code}" additionalText="{Code}"/>
+						</items>
+					</ComboBox>
+				</VBox>
+				<VBox width="calc(12.5% - .5rem)">
+					<Label text="{i18n>transportType}"/>
+					<ComboBox placeholder="Выберите тип" items="{path: 'mock>/TransportFromSet', templateShareable: false }" width="100%"
+						filterSecondaryValues="true" showSecondaryValues="false" name="RequestType" selectedKey="{RequestType}" data:op="EQ">
+						<items>
+							<core:ListItem text="{mock>Name}" key="{mock>Code}" additionalText="{mock>Code}"/>
+						</items>
+					</ComboBox>
+				</VBox>
+				<VBox width="calc(12% - .5rem)">
+					<Label text="{i18n>status}"/>
+					<ComboBox placeholder="Выберите статус" items="{path: 'mock>/ReservStatusSet', templateShareable: false }" width="100%"
+						filterSecondaryValues="true" showSecondaryValues="false" name="ReservSt" data:op="EQ" selectedKey="{ReservSt}">
+						<items>
+							<core:ListItem text="{mock>Name}" key="{mock>Code}" additionalText="{mock>Code}"/>
+						</items>
+					</ComboBox>
+				</VBox>
+				<VBox width="calc(14.28% - .5rem)" visible="{worklistView>/supportFlag}">
+                    <CheckBox selected="{Support}" name="Support" data:op="EQ" text="{i18n>supportFlag}"/>
+                </VBox>
+				<HBox width="100%" justifyContent="End">
+					<Button text="{i18n>search}" press="onSearch" width="calc(70px)" class="sapUiSmallMarginEnd"/>
+					<Button id="Reserve" enabled="false" text="{i18n>formReserve}" type="Accept" press="onReserve"/>
+				</HBox>
+			</HBox>
+		</semantic:headerContent>
+		<semantic:content>
+			<!---->
+			<Table id="table" width="auto" mode="MultiSelect"
+				items="{ path: '/RequestListSet', filters: [{ path: 'AppID', operator: 'EQ', value1: 'ZHR_FI_TV_RES' }], sorter: [{ path: 'DateBegin', descending: true }] }"
+				noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished" selectionChange="_selectionChange"
+				minScreenWidth="Desktop" demandPopin="true">
+				<!--items="{ path: '/RequestListSet', filters: [{ path: 'AppID', operator: 'EQ', value1: 'ZHR_FI_TV_RES' }], parameters: { expand: 'ToTrips' } }"-->
+				<headerToolbar>
+					<Toolbar>
+						<Title id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column><Label text="{i18n>reinr}"/></Column>
+					<Column ><Label text="{i18n>worker}"/></Column>
+					<Column><Label text="{i18n>country}"/></Column>
+					<Column><Label text="{i18n>city}"/></Column>
+					<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center" width="200px"><Label text="{i18n>dateBeginEnd}"/></Column>
+					<Column minScreenWidth="Desktop" demandPopin="true"><Label text="{i18n>sign}"/></Column>
+					<Column minScreenWidth="Desktop" demandPopin="true"><Label text="{i18n>performer}"/></Column>
+					<Column minScreenWidth="Desktop" demandPopin="true"><Label text="{i18n>reserveStatus}"/></Column>
+					<!--<Column hAlign="Right"><Label text="{i18n>status}"/></Column>-->
+					<Column></Column>
+				</columns>
+				<items>
+					<ColumnListItem press="onTake" type="Navigation">
+						<cells>
+							<Text text="{Reinr}"/>
+							<Text text="{Surname} {Inits}"/>
+							<Text text="{Country}"/>
+							<Link text="{City} {= ${ToTrips}.length > 1 ? ' +' : '' }{= ${ToTrips}.length > 1 ? ${ToTrips}.length - 1 : '' }"
+								enabled="{= ${ToTrips}.length > 1 ? true : false }" press="showCities"/>
+							<Text
+								text="{ path: 'DateBegin', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd.MM.yyyy' } } {= ${DateEnd} ? '&#8594;' : ''} { path: 'DateEnd', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd.MM.yyyy' } }"/>
+							<ObjectStatus inverted="false" class="uppercase" text="{OrderStatusText}" state="{OrderStatus}"/>
+							<Text text="{ReservUname}"/>
+							<ObjectStatus inverted="false" class="uppercase" text="{ReservStText}" state="{ path: 'ReservSt', formatter: '.formatter.reservStatus'}"/>
+							<!--<ObjectStatus inverted="true" text="{i18n>take}" state="{= ${ReservUname} ==='' ? 'Warning' : 'None'}" visible="{= ${ReservSt} !== '6' ? true : false}"/>-->
+							<!--state="{ parts: [ {path: 'Status1'}, {path: 'Status2'} ], formatter: '.formatter.statusColor'}" class="uppercase"/>-->
+							<!--<ObjectStatus inverted="false" text="{i18n>take}" class="uppercase" state="{ parts: [ {path: 'Status1'}, {path: 'Status2'} ], formatter: '.formatter.statusColor'}"/>-->
+							<Button data:id="take" data:status="2" text="{i18n>take}" press="onTake" visible="{= ${ReservSt} !== '6' ? true : false}"
+								enabled="{= ${ReservUname} === '' ? true : false }"/>
+							<!--text="{= ${ReservUname} === '' ? ${i18n>take} : ${i18n>browse} }"-->
+							<!--press="changeBookingStatus" text="{= ${ReservUname} === '' ? ${i18n>take} : ${i18n>browse} }" width="100%"-->
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+	</semantic:SemanticPage>
+</mvc:View>
